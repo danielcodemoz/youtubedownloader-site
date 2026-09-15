@@ -38,6 +38,22 @@
                     <a href="#features" class="nav-link">Funcionalidades</a>
                     <a href="#screenshots" class="nav-link">Capturas</a>
                     <a href="#legal" class="nav-link">Uso Responsável</a>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">
+                        <svg class="theme-icon theme-icon-light" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <circle cx="10" cy="10" r="4" fill="currentColor"/>
+                            <line x1="10" y1="0" x2="10" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="10" y1="17" x2="10" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="0" y1="10" x2="3" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="17" y1="10" x2="20" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="3" y1="3" x2="5" y2="5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="15" y1="15" x2="17" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="3" y1="17" x2="5" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="15" y1="5" x2="17" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <svg class="theme-icon theme-icon-dark" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M17 10.5C16 16 11 19 6 17C4 16 2.5 14.5 2 12.5C1 8.5 3.5 4.5 7.5 3C8.5 2.7 9 3.5 8.5 4.3C8 5.2 7.8 6.3 8 7.5C8.5 10.5 11 13 14 13.5C15.2 13.7 16.3 13.5 17.2 13C18 12.5 18.8 13 18.5 14C18.3 14.8 17.7 15.6 17 16.2"/>
+                        </svg>
+                    </button>
                     <a href="#download" class="nav-link nav-link-cta">Descarregar</a>
                 </div>
             </div>
@@ -284,7 +300,21 @@
 
             <div class="legal-grid">
                 <div class="legal-card" data-scroll-reveal>
-                    <div class="legal-icon">⚖️</div>
+                    <div class="legal-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="20" fill="url(#scales-gradient)" opacity="0.1"/>
+                            <path d="M24 8V32M24 32L16 28M24 32L32 28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 28C16 28 13 26 13 23C13 20 16 18 16 18L24 22L16 28Z" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M32 28C32 28 35 26 35 23C35 20 32 18 32 18L24 22L32 28Z" fill="currentColor" opacity="0.3" stroke="currentColor" stroke-width="1.5"/>
+                            <circle cx="24" cy="10" r="2" fill="currentColor"/>
+                            <defs>
+                                <linearGradient id="scales-gradient" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#DA4453"/>
+                                    <stop offset="1" stop-color="#ff5a6e"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
                     <h3 class="legal-title">Respeite os Direitos de Autor</h3>
                     <p class="legal-text">
                         Descarregue apenas conteúdo que tem autorização para guardar. Verifique sempre as licenças 
@@ -293,7 +323,19 @@
                 </div>
 
                 <div class="legal-card" data-scroll-reveal>
-                    <div class="legal-icon">🚫</div>
+                    <div class="legal-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="20" fill="url(#prohibit-gradient)" opacity="0.1"/>
+                            <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="3"/>
+                            <line x1="10" y1="10" x2="38" y2="38" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="prohibit-gradient" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#DA4453"/>
+                                    <stop offset="1" stop-color="#ff5a6e"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
                     <h3 class="legal-title">O Que NÃO Descarregar</h3>
                     <div class="legal-text">
                         <ul class="legal-list">
@@ -307,7 +349,19 @@
                 </div>
 
                 <div class="legal-card" data-scroll-reveal>
-                    <div class="legal-icon">✅</div>
+                    <div class="legal-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="20" fill="url(#check-gradient)" opacity="0.1"/>
+                            <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2.5"/>
+                            <path d="M16 24L21 29L32 18" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="check-gradient" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#DA4453"/>
+                                    <stop offset="1" stop-color="#ff5a6e"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
                     <h3 class="legal-title">Uso Pessoal e Autorizado</h3>
                     <p class="legal-text">
                         Esta ferramenta destina-se exclusivamente a uso pessoal e para descarregar conteúdo 
@@ -317,7 +371,22 @@
                 </div>
 
                 <div class="legal-card" data-scroll-reveal>
-                    <div class="legal-icon">📜</div>
+                    <div class="legal-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="20" fill="url(#document-gradient)" opacity="0.1"/>
+                            <rect x="14" y="8" width="20" height="28" rx="2" stroke="currentColor" stroke-width="2.5"/>
+                            <line x1="18" y1="16" x2="30" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="18" y1="22" x2="30" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="18" y1="28" x2="26" y2="28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M28 8V12L34 8V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="document-gradient" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#DA4453"/>
+                                    <stop offset="1" stop-color="#ff5a6e"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
                     <h3 class="legal-title">Termos de Serviço do YouTube</h3>
                     <p class="legal-text">
                         Esteja ciente de que descarregar vídeos pode violar os Termos de Serviço do YouTube. 
