@@ -483,8 +483,17 @@ class I18n {
     }
     
     t(key) {
+        // First, try flat key lookup
+        let value = translations[this.currentLang]?.[key];
+        
+        // If flat lookup succeeded and returned a string, use it
+        if (typeof value === 'string') {
+            return value;
+        }
+        
+        // Otherwise, try nested path walk for backwards compatibility
         const keys = key.split('.');
-        let value = translations[this.currentLang];
+        value = translations[this.currentLang];
         
         for (const k of keys) {
             if (value && typeof value === 'object') {
@@ -496,6 +505,15 @@ class I18n {
         
         // Fallback to English if translation not found
         if (!value && this.currentLang !== 'en') {
+            // Try flat lookup in English
+            value = translations.en?.[key];
+            
+            // If flat lookup succeeded and returned a string, use it
+            if (typeof value === 'string') {
+                return value;
+            }
+            
+            // Otherwise, try nested path walk in English
             value = translations.en;
             for (const k of keys) {
                 if (value && typeof value === 'object') {
