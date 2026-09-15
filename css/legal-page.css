@@ -30,6 +30,24 @@
     padding-top: 70px;
 }
 
+/* Legal Page Cards - Default to visible, optional reveal animation */
+.legal-page .lp-card {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.legal-page .lp-card:not(.revealed) {
+    /* Optional pre-reveal state - but never invisible */
+    opacity: 0.95;
+    transform: translateY(10px);
+}
+
+.legal-page .lp-card.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Focus Visible Styles - Scoped to legal page */
 .legal-page :focus-visible {
     outline: 3px solid var(--color-primary);
@@ -148,6 +166,37 @@
 [data-theme="light"] .legal-section p,
 [data-theme="light"] .legal-list li {
     color: #333333;
+}
+
+/* CRITICAL: Hard overrides for light mode - prevents black backgrounds */
+html[data-theme="light"] body.legal-page {
+    background: #f6f3ee !important;
+    color: #1a1a1a !important;
+}
+
+html[data-theme="light"] body.legal-page .lp-card {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+}
+
+html[data-theme="light"] body.legal-page .legal-article {
+    background: #ffffff !important;
+    color: #1a1a1a !important;
+}
+
+html[data-theme="light"] body.legal-page h1,
+html[data-theme="light"] body.legal-page h2,
+html[data-theme="light"] body.legal-page h3 {
+    color: #1a1a1a !important;
+}
+
+html[data-theme="light"] body.legal-page p,
+html[data-theme="light"] body.legal-page li {
+    color: #333333 !important;
+}
+
+html[data-theme="light"] body.legal-page .nav {
+    background: rgba(246, 243, 238, 0.94) !important;
 }
 
 /* Legal Sections inside article */
@@ -274,8 +323,9 @@ ol.legal-list li::before {
     transform: scale(1.1);
 }
 
-/* High Contrast Mode */
-body[data-contrast="high"] {
+/* High Contrast Mode - Dark theme high contrast */
+body[data-theme="dark"][data-contrast="high"],
+body:not([data-theme])[data-contrast="high"] {
     --color-bg: #000000;
     --color-surface: #1a1a1a;
     --color-surface-light: #2a2a2a;
@@ -286,6 +336,7 @@ body[data-contrast="high"] {
     --color-primary: #ff6b6b;
 }
 
+/* Light theme high contrast - stays LIGHT */
 [data-theme="light"][data-contrast="high"] {
     --color-bg: #ffffff;
     --color-surface: #ffffff;
@@ -295,6 +346,17 @@ body[data-contrast="high"] {
     --color-text-tertiary: #333333;
     --color-border: #000000;
     --color-primary: #cc0000;
+}
+
+/* Ensure light mode + high contrast stays light paper */
+html[data-theme="light"] body.legal-page[data-contrast="high"] {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+html[data-theme="light"] body.legal-page[data-contrast="high"] .legal-article {
+    background: #ffffff !important;
+    color: #000000 !important;
 }
 
 body[data-contrast="high"] * {
