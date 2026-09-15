@@ -289,8 +289,9 @@ class PrintHandler {
     
     beforePrint() {
         // Ensure all sections are expanded and visible
-        document.querySelectorAll('.legal-section').forEach(section => {
-            section.style.pageBreakInside = 'avoid';
+        // Don't force avoid on whole cards (causes blank pages). Prefer CSS on smaller blocks.
+        document.querySelectorAll('.lp-card-head, .lp-check-item, .lp-num-item').forEach(el => {
+            el.style.pageBreakInside = 'avoid';
         });
         
         // Add print timestamp
@@ -322,7 +323,7 @@ class PrintHandler {
                 ? `Documento exportado em ${timestamp}`
                 : `Document exported on ${timestamp}`;
             
-            const article = document.querySelector('.legal-article');
+            const article = document.querySelector('.lp-container') || document.querySelector('.legal-article') || document.querySelector('.legal-content');
             if (article) {
                 article.appendChild(printInfo);
             }
@@ -339,11 +340,53 @@ class PrintHandler {
     }
 }
 
+
+// Scroll-reveal for legal page cards (respects prefers-reduced-motion)
+class LegalPageScrollReveal {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        const elements = document.querySelectorAll('.lp-card[data-scroll-reveal], [data-scroll-reveal].lp-card');
+        if (!elements.length) return;
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) {
+            elements.forEach(el => el.classList.add('revealed'));
+            return;
+        }
+
+        // If homepage ScrollReveal already handled them, skip duplicates
+        const alreadyRevealed = Array.from(elements).every(el => el.classList.contains('revealed'));
+        if (alreadyRevealed) return;
+
+        if (!('IntersectionObserver' in window)) {
+            elements.forEach(el => el.classList.add('revealed'));
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        elements.forEach(el => {
+            if (!el.classList.contains('revealed')) observer.observe(el);
+        });
+    }
+}
+
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     new LegalPageAccessibility();
     new LegalPageNavigation();
     new PrintHandler();
+    new LegalPageScrollReveal();
     
     // Log for developers
     const lang = document.documentElement.getAttribute('lang');
