@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uso Responsável e Termos Legais - ytDownloader</title>
     <meta name="description" content="Compreenda as suas responsabilidades e o uso apropriado do ytDownloader">
-    
+
     <!-- Open Graph -->
     <meta property="og:title" content="Uso Responsável - ytDownloader">
     <meta property="og:description" content="Diretrizes legais e éticas para uso responsável do ytDownloader">
-    <meta property="og:url" content="https://youtubedownloader.danielpro.dev/uso-responsavel.html">
+    <meta property="og:url" content="https://youtubedownloader.danielpro.dev/uso-responsavel">
     <meta property="og:type" content="website">
-    
+    <link rel="canonical" href="https://youtubedownloader.danielpro.dev/uso-responsavel">
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
     <link rel="alternate icon" href="/assets/favicon.ico">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/legal-page.css?v=2">
+
+    <link rel="stylesheet" href="/css/style.css?v=lm2">
+    <link rel="stylesheet" href="/css/navbar-icons.css?v=lm2">
+    <link rel="stylesheet" href="/css/legal-page.css?v=pdf6">
 </head>
 <body class="legal-page">
     <!-- Skip Link -->
@@ -38,13 +40,13 @@
                         </svg>
                         <span data-i18n="legal.page.back">Voltar ao Início</span>
                     </a>
-                    
+
                     <!-- Language Toggle -->
                     <button class="theme-toggle" id="langToggle" aria-label="Mudar idioma" data-i18n-aria="nav.lang.toggle">
                         <span class="lang-flag lang-flag-pt">🇵🇹</span>
                         <span class="lang-flag lang-flag-en" style="display:none;">🇬🇧</span>
                     </button>
-                    
+
                     <!-- Theme Toggle -->
                     <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema" data-i18n-aria="nav.theme.toggle">
                         <svg class="theme-icon theme-icon-light" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -69,7 +71,7 @@
 
     <!-- Main Content -->
     <main id="main-content" class="legal-content" tabindex="-1">
-        <div class="container">
+        <div class="lp-container">
             <!-- Accessibility Controls -->
             <div class="accessibility-controls" role="toolbar" aria-label="Accessibility controls">
                 <button id="increaseText" class="a11y-btn" aria-label="Aumentar tamanho do texto" data-i18n-aria="legal.page.increase.text" title="Aumentar texto">
@@ -101,270 +103,319 @@
                 </p>
             </header>
 
-            <!-- Document Content -->
-            <article class="legal-article">
-                <!-- Introduction -->
-                <section class="legal-section" id="intro">
-                    <h2 data-i18n="legal.page.intro.title">Compromisso com o Uso Legal</h2>
+            <!-- Intro -->
+            <section class="lp-section lp-stack" id="intro">
+                <article class="lp-card lp-card--accent" data-scroll-reveal>
+                    <div class="lp-card-head">
+                        <div class="lp-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h2 data-i18n="legal.page.intro.title">Compromisso com o Uso Legal</h2>
+                    </div>
                     <p data-i18n="legal.page.intro.text">
-                        O ytDownloader é fornecido como uma ferramenta técnica para uso pessoal e educacional. 
+                        O ytDownloader é fornecido como uma ferramenta técnica para uso pessoal e educacional.
                         Este documento explica as suas responsabilidades legais ao utilizar este software.
                     </p>
-                </section>
+                </article>
+            </section>
 
-                <!-- 1. Copyright -->
-                <section class="legal-section" id="copyright">
-                    <h2 data-i18n="legal.page.copyright.title">1. Direitos de Autor e Propriedade Intelectual</h2>
-                    
+            <!-- Copyright vs YouTube ToS -->
+            <section class="lp-section lp-grid" aria-label="Copyright e Termos do YouTube">
+                <article class="lp-card" id="copyright" data-scroll-reveal>
+                    <div class="lp-card-head">
+                        <div class="lp-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M15 9.5a3.5 3.5 0 0 0-6.4-1.5M9 14.5a3.5 3.5 0 0 0 6.4 1.5"/></svg>
+                        </div>
+                        <h2 data-i18n="legal.page.copyright.title">1. Direitos de Autor e Propriedade Intelectual</h2>
+                    </div>
+
                     <h3 data-i18n="legal.page.copyright.berne.title">Convenção de Berna e Proteção Internacional</h3>
                     <p data-i18n="legal.page.copyright.berne.text">
-                        A maioria dos países adere à Convenção de Berna, que protege automaticamente obras criativas 
-                        (incluindo vídeos) sem necessidade de registo. Isto significa que quase todos os vídeos no 
+                        A maioria dos países adere à Convenção de Berna, que protege automaticamente obras criativas
+                        (incluindo vídeos) sem necessidade de registo. Isto significa que quase todos os vídeos no
                         YouTube estão protegidos por direitos de autor desde o momento da sua criação.
                     </p>
-                    
+
                     <h3 data-i18n="legal.page.copyright.owner.title">Quem detém os direitos?</h3>
                     <p data-i18n="legal.page.copyright.owner.text">
-                        O criador do vídeo (ou a entidade que detém os direitos) possui direitos exclusivos sobre 
-                        cópia, distribuição e uso derivado do conteúdo. Descarregar e usar vídeos sem permissão 
+                        O criador do vídeo (ou a entidade que detém os direitos) possui direitos exclusivos sobre
+                        cópia, distribuição e uso derivado do conteúdo. Descarregar e usar vídeos sem permissão
                         pode constituir violação de direitos de autor.
                     </p>
-                    
+
                     <h3 data-i18n="legal.page.copyright.fair.title">Uso Justo e Exceções</h3>
                     <p data-i18n="legal.page.copyright.fair.text">
-                        Algumas jurisdições permitem "uso justo" ou "exceções de uso privado" limitadas, mas estes 
-                        conceitos são complexos e variam significativamente entre países. Não assuma automaticamente 
+                        Algumas jurisdições permitem "uso justo" ou "exceções de uso privado" limitadas, mas estes
+                        conceitos são complexos e variam significativamente entre países. Não assuma automaticamente
                         que o seu uso está coberto por estas exceções.
                     </p>
-                </section>
+                </article>
 
-                <!-- 2. YouTube ToS -->
-                <section class="legal-section" id="youtube-tos">
-                    <h2 data-i18n="legal.page.youtube.title">2. Termos de Serviço do YouTube</h2>
-                    
+                <article class="lp-card" id="youtube-tos" data-scroll-reveal>
+                    <div class="lp-card-head">
+                        <div class="lp-icon lp-icon--info" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8M10 9H8"/></svg>
+                        </div>
+                        <h2 data-i18n="legal.page.youtube.title">2. Termos de Serviço do YouTube</h2>
+                    </div>
+
                     <h3 data-i18n="legal.page.youtube.tos.title">Restrições dos Termos de Serviço</h3>
                     <p data-i18n="legal.page.youtube.tos.text">
-                        Os Termos de Serviço do YouTube (Secção 4.b) proíbem explicitamente o acesso, reprodução, 
-                        download, distribuição ou qualquer outra forma de uso de conteúdo exceto através da 
+                        Os Termos de Serviço do YouTube (Secção 4.b) proíbem explicitamente o acesso, reprodução,
+                        download, distribuição ou qualquer outra forma de uso de conteúdo exceto através da
                         funcionalidade fornecida pelo Serviço ou conforme permitido por licenças de conteúdo separadas.
                     </p>
-                    
+
                     <h3 data-i18n="legal.page.youtube.vs.title">Termos de Serviço vs. Lei de Direitos de Autor</h3>
                     <p data-i18n="legal.page.youtube.vs.text" data-i18n-html>
-                        É importante distinguir: violar os Termos de Serviço do YouTube é uma questão 
-                        <strong>contratual civil</strong> (entre si e o YouTube), enquanto violar direitos de autor 
-                        pode resultar em consequências <strong>legais criminais</strong> em muitas jurisdições. 
+                        É importante distinguir: violar os Termos de Serviço do YouTube é uma questão
+                        <strong>contratual civil</strong> (entre si e o YouTube), enquanto violar direitos de autor
+                        pode resultar em consequências <strong>legais criminais</strong> em muitas jurisdições.
                         Ambos devem ser levados a sério.
                     </p>
-                    
+
                     <h3 data-i18n="legal.page.youtube.cc.title">Vídeos com Licença Creative Commons</h3>
                     <p data-i18n="legal.page.youtube.cc.text">
-                        Alguns criadores publicam vídeos sob licenças Creative Commons que explicitamente permitem 
+                        Alguns criadores publicam vídeos sob licenças Creative Commons que explicitamente permitem
                         download e reutilização. Estes vídeos mostram a licença CC claramente na página do vídeo no YouTube.
                     </p>
-                </section>
+                </article>
+            </section>
 
-                <!-- 3. Prohibited Uses -->
-                <section class="legal-section" id="prohibited">
-                    <h2 data-i18n="legal.page.prohibited.title">3. O Que NÃO Deve Descarregar</h2>
+            <!-- Allowed vs Prohibited -->
+            <section class="lp-section lp-grid" aria-label="Permitido e Proibido">
+                <article class="lp-card lp-card--danger" id="prohibited" data-scroll-reveal>
+                    <div class="lp-card-head">
+                        <div class="lp-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+                        </div>
+                        <h2 data-i18n="legal.page.prohibited.title">3. O Que NÃO Deve Descarregar</h2>
+                    </div>
                     <p data-i18n="legal.page.prohibited.intro">Nunca utilize o ytDownloader para descarregar:</p>
-                    
-                    <ul class="legal-list">
+                    <ul class="lp-list lp-list--cross">
                         <li data-i18n="legal.page.prohibited.1" data-i18n-html>
-                            <strong>Conteúdo comercial protegido:</strong> Filmes, programas de TV, videoclipes musicais, 
+                            <strong>Conteúdo comercial protegido:</strong> Filmes, programas de TV, videoclipes musicais,
                             ou qualquer conteúdo produzido comercialmente sem permissão explícita do detentor dos direitos.
                         </li>
                         <li data-i18n="legal.page.prohibited.2" data-i18n-html>
-                            <strong>Conteúdo protegido por subscrição:</strong> Vídeos destinados apenas a membros de canais, 
+                            <strong>Conteúdo protegido por subscrição:</strong> Vídeos destinados apenas a membros de canais,
                             subscritores pagos, ou conteúdo premium.
                         </li>
                         <li data-i18n="legal.page.prohibited.3" data-i18n-html>
-                            <strong>Material educacional pago:</strong> Cursos, tutoriais, ou material de ensino que seja 
+                            <strong>Material educacional pago:</strong> Cursos, tutoriais, ou material de ensino que seja
                             vendido ou disponibilizado apenas mediante pagamento.
                         </li>
                         <li data-i18n="legal.page.prohibited.4" data-i18n-html>
-                            <strong>Conteúdo privado ou restrito:</strong> Vídeos marcados como privados, não listados 
+                            <strong>Conteúdo privado ou restrito:</strong> Vídeos marcados como privados, não listados
                             sem permissão, ou com acesso restrito pelo criador.
                         </li>
                         <li data-i18n="legal.page.prohibited.5" data-i18n-html>
-                            <strong>Conteúdo ilegal:</strong> Qualquer material que seja ilegal possuir, distribuir ou 
+                            <strong>Conteúdo ilegal:</strong> Qualquer material que seja ilegal possuir, distribuir ou
                             visualizar na sua jurisdição.
                         </li>
                         <li data-i18n="legal.page.prohibited.6" data-i18n-html>
-                            <strong>Uso comercial não autorizado:</strong> Descarregar conteúdo para usar em projetos 
+                            <strong>Uso comercial não autorizado:</strong> Descarregar conteúdo para usar em projetos
                             comerciais, publicidade ou qualquer finalidade lucrativa sem permissão explícita.
                         </li>
                     </ul>
-                </section>
+                </article>
 
-                <!-- 4. Permitted Uses -->
-                <section class="legal-section" id="permitted">
-                    <h2 data-i18n="legal.page.permitted.title">4. Usos Legítimos e Permitidos</h2>
+                <article class="lp-card lp-card--success" id="permitted" data-scroll-reveal>
+                    <div class="lp-card-head">
+                        <div class="lp-icon lp-icon--success" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+                        </div>
+                        <h2 data-i18n="legal.page.permitted.title">4. Usos Legítimos e Permitidos</h2>
+                    </div>
                     <p data-i18n="legal.page.permitted.intro">Pode utilizar o ytDownloader legalmente para:</p>
-                    
-                    <ul class="legal-list">
+                    <ul class="lp-list lp-list--check">
                         <li data-i18n="legal.page.permitted.1" data-i18n-html>
-                            <strong>O seu próprio conteúdo:</strong> Descarregar vídeos que você mesmo criou e 
+                            <strong>O seu próprio conteúdo:</strong> Descarregar vídeos que você mesmo criou e
                             publicou no YouTube.
                         </li>
                         <li data-i18n="legal.page.permitted.2" data-i18n-html>
-                            <strong>Conteúdo com permissão explícita:</strong> Vídeos para os quais obteve permissão 
+                            <strong>Conteúdo com permissão explícita:</strong> Vídeos para os quais obteve permissão
                             escrita do detentor dos direitos para descarregar e usar.
                         </li>
                         <li data-i18n="legal.page.permitted.3" data-i18n-html>
-                            <strong>Conteúdo Creative Commons:</strong> Vídeos explicitamente licenciados sob licenças 
+                            <strong>Conteúdo Creative Commons:</strong> Vídeos explicitamente licenciados sob licenças
                             Creative Commons que permitem download (verifique sempre os termos específicos da licença CC).
                         </li>
                         <li data-i18n="legal.page.permitted.4" data-i18n-html>
-                            <strong>Domínio público:</strong> Conteúdo que esteja genuinamente em domínio público 
+                            <strong>Domínio público:</strong> Conteúdo que esteja genuinamente em domínio público
                             na sua jurisdição.
                         </li>
                         <li data-i18n="legal.page.permitted.5" data-i18n-html>
-                            <strong>Material educacional autorizado:</strong> Quando um educador ou instituição lhe dá 
+                            <strong>Material educacional autorizado:</strong> Quando um educador ou instituição lhe dá
                             permissão explícita para descarregar o seu conteúdo educacional.
                         </li>
                         <li data-i18n="legal.page.permitted.6" data-i18n-html>
-                            <strong>Backup pessoal do seu próprio upload:</strong> Criar uma cópia de segurança dos 
+                            <strong>Backup pessoal do seu próprio upload:</strong> Criar uma cópia de segurança dos
                             vídeos que você publicou.
                         </li>
                     </ul>
-                </section>
+                </article>
+            </section>
 
-                <!-- 5. Responsibility -->
-                <section class="legal-section" id="responsibility">
-                    <h2 data-i18n="legal.page.responsibility.title">5. A Sua Responsabilidade</h2>
+            <!-- Responsibility checklist -->
+            <section class="lp-section lp-stack" id="responsibility">
+                <article class="lp-card lp-card--checklist" data-scroll-reveal>
+                    <div class="lp-card-head">
+                        <div class="lp-icon lp-icon--warn" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                        </div>
+                        <h2 data-i18n="legal.page.responsibility.title">5. A Sua Responsabilidade</h2>
+                    </div>
                     <p data-i18n="legal.page.responsibility.text">
                         Ao utilizar o ytDownloader, você assume total responsabilidade por:
                     </p>
-                    
-                    <ol class="legal-list">
-                        <li data-i18n="legal.page.responsibility.1">
-                            Verificar que tem direitos legais ou permissão para descarregar qualquer conteúdo
-                        </li>
-                        <li data-i18n="legal.page.responsibility.2">
-                            Cumprir as leis de direitos de autor da sua jurisdição
-                        </li>
-                        <li data-i18n="legal.page.responsibility.3">
-                            Respeitar os Termos de Serviço do YouTube e de outras plataformas
-                        </li>
-                        <li data-i18n="legal.page.responsibility.4">
-                            Garantir que o uso do conteúdo descarregado está em conformidade com as leis aplicáveis
-                        </li>
-                        <li data-i18n="legal.page.responsibility.5">
-                            Obter aconselhamento jurídico profissional se tiver dúvidas sobre a legalidade do seu uso
-                        </li>
-                    </ol>
-                </section>
+                    <div class="lp-checklist">
+                        <div class="lp-check-item">
+                            <span class="lp-check-num" aria-hidden="true">1</span>
+                            <span data-i18n="legal.page.responsibility.1">Verificar que tem direitos legais ou permissão para descarregar qualquer conteúdo</span>
+                        </div>
+                        <div class="lp-check-item">
+                            <span class="lp-check-num" aria-hidden="true">2</span>
+                            <span data-i18n="legal.page.responsibility.2">Cumprir as leis de direitos de autor da sua jurisdição</span>
+                        </div>
+                        <div class="lp-check-item">
+                            <span class="lp-check-num" aria-hidden="true">3</span>
+                            <span data-i18n="legal.page.responsibility.3">Respeitar os Termos de Serviço do YouTube e de outras plataformas</span>
+                        </div>
+                        <div class="lp-check-item">
+                            <span class="lp-check-num" aria-hidden="true">4</span>
+                            <span data-i18n="legal.page.responsibility.4">Garantir que o uso do conteúdo descarregado está em conformidade com as leis aplicáveis</span>
+                        </div>
+                        <div class="lp-check-item">
+                            <span class="lp-check-num" aria-hidden="true">5</span>
+                            <span data-i18n="legal.page.responsibility.5">Obter aconselhamento jurídico profissional se tiver dúvidas sobre a legalidade do seu uso</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
 
-                <!-- 6. Platform Commitment -->
-                <section class="legal-section" id="platform">
-                    <h2 data-i18n="legal.page.platform.title">6. Compromisso da Plataforma</h2>
+            <!-- Platform + Disclaimer -->
+            <section class="lp-section lp-grid">
+                <article class="lp-card" id="platform" data-scroll-reveal>
+                    <div class="lp-card-head">
+                        <div class="lp-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+                        </div>
+                        <h2 data-i18n="legal.page.platform.title">6. Compromisso da Plataforma</h2>
+                    </div>
                     <p data-i18n="legal.page.platform.text">Os desenvolvedores do ytDownloader:</p>
-                    
-                    <ul class="legal-list">
-                        <li data-i18n="legal.page.platform.1">
-                            Fornecemos esta ferramenta exclusivamente para fins técnicos legítimos e educacionais
-                        </li>
-                        <li data-i18n="legal.page.platform.2">
-                            Não hospedamos, armazenamos ou distribuímos qualquer conteúdo do YouTube
-                        </li>
-                        <li data-i18n="legal.page.platform.3">
-                            Não encorajamos, apoiamos ou facilitamos a pirataria ou violação de direitos de autor
-                        </li>
-                        <li data-i18n="legal.page.platform.4">
-                            Fornecemos a ferramenta "como está" sem garantias de qualquer tipo
-                        </li>
-                        <li data-i18n="legal.page.platform.5">
-                            Não somos responsáveis pelo uso ou uso indevido da ferramenta pelos utilizadores
-                        </li>
-                        <li data-i18n="legal.page.platform.6">
-                            Reservamo-nos o direito de modificar ou descontinuar a ferramenta a qualquer momento
-                        </li>
+                    <ul class="lp-list">
+                        <li data-i18n="legal.page.platform.1">Fornecemos esta ferramenta exclusivamente para fins técnicos legítimos e educacionais</li>
+                        <li data-i18n="legal.page.platform.2">Não hospedamos, armazenamos ou distribuímos qualquer conteúdo do YouTube</li>
+                        <li data-i18n="legal.page.platform.3">Não encorajamos, apoiamos ou facilitamos a pirataria ou violação de direitos de autor</li>
+                        <li data-i18n="legal.page.platform.4">Fornecemos a ferramenta "como está" sem garantias de qualquer tipo</li>
+                        <li data-i18n="legal.page.platform.5">Não somos responsáveis pelo uso ou uso indevido da ferramenta pelos utilizadores</li>
+                        <li data-i18n="legal.page.platform.6">Reservamo-nos o direito de modificar ou descontinuar a ferramenta a qualquer momento</li>
                     </ul>
-                </section>
+                </article>
 
-                <!-- 7. Disclaimer -->
-                <section class="legal-section" id="disclaimer">
-                    <h2 data-i18n="legal.page.disclaimer.title">7. Aviso Legal e Limitação de Responsabilidade</h2>
-                    
+                <article class="lp-card" id="disclaimer" data-scroll-reveal>
+                    <div class="lp-card-head">
+                        <div class="lp-icon lp-icon--warn" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>
+                        </div>
+                        <h2 data-i18n="legal.page.disclaimer.title">7. Aviso Legal e Limitação de Responsabilidade</h2>
+                    </div>
                     <div class="legal-warning">
                         <p data-i18n="legal.page.disclaimer.text">
-                            ESTE DOCUMENTO NÃO CONSTITUI ACONSELHAMENTO JURÍDICO. Se precisa de orientação legal específica, 
+                            ESTE DOCUMENTO NÃO CONSTITUI ACONSELHAMENTO JURÍDICO. Se precisa de orientação legal específica,
                             consulte um advogado qualificado na sua jurisdição.
                         </p>
                     </div>
-                    
                     <p data-i18n="legal.page.disclaimer.warranty">
-                        O ytDownloader é fornecido "COMO ESTÁ", sem garantias de qualquer tipo, expressas ou implícitas, 
+                        O ytDownloader é fornecido "COMO ESTÁ", sem garantias de qualquer tipo, expressas ou implícitas,
                         incluindo mas não limitado a garantias de comercialização, adequação a um fim específico e não violação.
                     </p>
-                    
                     <p data-i18n="legal.page.disclaimer.liability">
-                        Em nenhuma circunstância os desenvolvedores, contribuidores ou distribuidores serão responsáveis 
-                        por quaisquer danos diretos, indiretos, incidentais, especiais, exemplares ou consequenciais 
+                        Em nenhuma circunstância os desenvolvedores, contribuidores ou distribuidores serão responsáveis
+                        por quaisquer danos diretos, indiretos, incidentais, especiais, exemplares ou consequenciais
                         decorrentes do uso ou incapacidade de usar este software.
                     </p>
-                </section>
+                </article>
+            </section>
 
-                <!-- 8. Jurisdiction -->
-                <section class="legal-section" id="jurisdiction">
-                    <h2 data-i18n="legal.page.jurisdiction.title">8. Considerações Jurisdicionais</h2>
+            <!-- Jurisdiction / Updates / Resources -->
+            <section class="lp-section lp-grid lp-grid--3">
+                <article class="lp-card" id="jurisdiction" data-scroll-reveal>
+                    <div class="lp-card-head">
+                        <div class="lp-icon lp-icon--info" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                        <h2 data-i18n="legal.page.jurisdiction.title">8. Considerações Jurisdicionais</h2>
+                    </div>
                     <p data-i18n="legal.page.jurisdiction.text">
-                        As leis de direitos de autor e direitos digitais variam significativamente entre países e regiões. 
-                        É sua responsabilidade compreender e cumprir as leis da sua jurisdição específica. Alguns países 
+                        As leis de direitos de autor e direitos digitais variam significativamente entre países e regiões.
+                        É sua responsabilidade compreender e cumprir as leis da sua jurisdição específica. Alguns países
                         têm leis mais permissivas sobre cópias privadas, enquanto outros são mais restritivos.
                     </p>
-                </section>
+                </article>
 
-                <!-- 9. Updates -->
-                <section class="legal-section" id="updates">
-                    <h2 data-i18n="legal.page.updates.title">9. Atualizações deste Documento</h2>
+                <article class="lp-card" id="updates" data-scroll-reveal>
+                    <div class="lp-card-head">
+                        <div class="lp-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                        </div>
+                        <h2 data-i18n="legal.page.updates.title">9. Atualizações deste Documento</h2>
+                    </div>
                     <p data-i18n="legal.page.updates.text">
-                        Este documento pode ser atualizado periodicamente para refletir mudanças legais, alterações de 
-                        plataforma ou esclarecimentos. A versão mais recente estará sempre disponível no website oficial 
+                        Este documento pode ser atualizado periodicamente para refletir mudanças legais, alterações de
+                        plataforma ou esclarecimentos. A versão mais recente estará sempre disponível no website oficial
                         do ytDownloader.
                     </p>
-                </section>
+                </article>
 
-                <!-- 10. Resources -->
-                <section class="legal-section" id="resources">
-                    <h2 data-i18n="legal.page.contact.title">10. Perguntas e Recursos</h2>
+                <article class="lp-card" id="resources" data-scroll-reveal>
+                    <div class="lp-card-head">
+                        <div class="lp-icon lp-icon--success" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        </div>
+                        <h2 data-i18n="legal.page.contact.title">10. Perguntas e Recursos</h2>
+                    </div>
                     <p data-i18n="legal.page.contact.text">
                         Se tiver questões sobre o uso responsável do ytDownloader, consulte:
                     </p>
-                    
-                    <ul class="legal-list">
-                        <li data-i18n="legal.page.contact.1">
-                            A documentação oficial do YouTube sobre direitos de autor e licenciamento
-                        </li>
-                        <li data-i18n="legal.page.contact.2">
-                            Recursos sobre Creative Commons em creativecommons.org
-                        </li>
-                        <li data-i18n="legal.page.contact.3">
-                            Um advogado qualificado especializado em direitos de autor na sua jurisdição
-                        </li>
+                    <ul class="lp-list">
+                        <li data-i18n="legal.page.contact.1">A documentação oficial do YouTube sobre direitos de autor e licenciamento</li>
+                        <li data-i18n="legal.page.contact.2">Recursos sobre Creative Commons em creativecommons.org</li>
+                        <li data-i18n="legal.page.contact.3">Um advogado qualificado especializado em direitos de autor na sua jurisdição</li>
                     </ul>
-                </section>
+                </article>
+            </section>
 
-                <!-- Conclusion -->
-                <section class="legal-section" id="conclusion">
-                    <h2 data-i18n="legal.page.final.title">Uso Responsável Requer Diligência</h2>
+            <!-- Conclusion + Acknowledgment -->
+            <section class="lp-section lp-stack">
+                <article class="lp-card" id="conclusion" data-scroll-reveal>
+                    <div class="lp-card-head">
+                        <div class="lp-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M5 19l.75 2.25L8 22l-2.25.75L5 25l-.75-2.25L2 22l2.25-.75L5 19z" transform="translate(10 -6) scale(0.55)"/></svg>
+                        </div>
+                        <h2 data-i18n="legal.page.final.title">Uso Responsável Requer Diligência</h2>
+                    </div>
                     <p data-i18n="legal.page.final.text">
-                        A tecnologia é neutra; o uso que fazemos dela define a sua ética. O ytDownloader pode ser uma 
-                        ferramenta valiosa quando usado de forma responsável e legal. Assegure-se sempre de que tem o 
+                        A tecnologia é neutra; o uso que fazemos dela define a sua ética. O ytDownloader pode ser uma
+                        ferramenta valiosa quando usado de forma responsável e legal. Assegure-se sempre de que tem o
                         direito de descarregar e usar qualquer conteúdo antes de o fazer.
                     </p>
-                </section>
+                </article>
 
-                <!-- Acknowledgment -->
-                <section class="legal-section legal-acknowledgment" id="acknowledgment">
-                    <h2 data-i18n="legal.page.acknowledgment.title">Reconhecimento</h2>
+                <article class="lp-card lp-ack" id="acknowledgment" data-scroll-reveal>
+                    <div class="lp-card-head">
+                        <div class="lp-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h2 data-i18n="legal.page.acknowledgment.title">Reconhecimento</h2>
+                    </div>
                     <p data-i18n="legal.page.acknowledgment.text">
-                        Ao utilizar o ytDownloader, você reconhece que leu, compreendeu e concorda em cumprir os termos 
+                        Ao utilizar o ytDownloader, você reconhece que leu, compreendeu e concorda em cumprir os termos
                         e responsabilidades descritos neste documento.
                     </p>
-                </section>
-            </article>
+                </article>
+            </section>
         </div>
     </main>
 
@@ -378,7 +429,7 @@
                         Descarregue os seus vídeos favoritos com facilidade
                     </p>
                 </div>
-                
+
                 <div class="footer-links">
                     <div class="footer-column">
                         <h4 data-i18n="footer.product">Produto</h4>
@@ -386,12 +437,12 @@
                         <a href="/#screenshots" data-i18n="footer.product.screenshots">Capturas de Ecrã</a>
                         <a href="/#download" data-i18n="footer.product.download">Descarregar</a>
                     </div>
-                    
+
                     <div class="footer-column">
                         <h4 data-i18n="footer.legal">Legal</h4>
                         <a href="/uso-responsavel" data-i18n="footer.legal.responsible">Uso Responsável</a>
                     </div>
-                    
+
                     <div class="footer-column">
                         <h4 data-i18n="footer.developer">Desenvolvedor</h4>
                         <a href="https://danielpro.dev" target="_blank" rel="noopener" data-i18n="footer.developer.portfolio">Portfólio</a>
@@ -399,7 +450,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="footer-legal">
                 <p class="footer-copyright" data-i18n="footer.copyright" data-i18n-html>
                     © 2026 ytDownloader. Desenvolvido por <a href="https://danielpro.dev" target="_blank" rel="noopener" class="footer-link">Daniel Marcos</a> em Moçambique 🇲🇿
@@ -408,8 +459,8 @@
         </div>
     </footer>
 
-    <script src="/js/i18n.js"></script>
-    <script src="/js/script.js"></script>
-    <script src="/js/legal-page.js"></script>
+    <script src="/js/i18n.js?v=lm2"></script>
+    <script src="/js/script.js?v=lm2"></script>
+    <script src="/js/legal-page.js?v=pdf6"></script>
 </body>
 </html>

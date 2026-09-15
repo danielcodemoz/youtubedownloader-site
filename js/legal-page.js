@@ -1,6 +1,6 @@
 /**
  * Legal Page Accessibility Features
- * Text sizing, high contrast, PDF export, and scroll reveal
+ * Text sizing, high contrast, and PDF export
  */
 
 class LegalPageAccessibility {
@@ -270,63 +270,6 @@ class LegalPageNavigation {
     }
 }
 
-// Scroll Reveal for .lp-card elements
-class ScrollReveal {
-    constructor() {
-        this.cards = document.querySelectorAll('.lp-card');
-        this.observer = null;
-        this.init();
-    }
-    
-    init() {
-        if (this.cards.length === 0) return;
-        
-        // Check if browser supports IntersectionObserver
-        if (!('IntersectionObserver' in window)) {
-            // Fallback: reveal all cards immediately
-            this.cards.forEach(card => card.classList.add('revealed'));
-            return;
-        }
-        
-        // Respect prefers-reduced-motion
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        
-        if (prefersReducedMotion) {
-            // If user prefers reduced motion, reveal all immediately
-            this.cards.forEach(card => card.classList.add('revealed'));
-            return;
-        }
-        
-        // Set up Intersection Observer
-        const options = {
-            root: null,
-            rootMargin: '0px 0px -100px 0px',
-            threshold: 0.1
-        };
-        
-        this.observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                    // Optional: stop observing once revealed
-                    this.observer.unobserve(entry.target);
-                }
-            });
-        }, options);
-        
-        // Observe each card
-        this.cards.forEach(card => {
-            this.observer.observe(card);
-        });
-    }
-    
-    destroy() {
-        if (this.observer) {
-            this.observer.disconnect();
-        }
-    }
-}
-
 // Print event handling
 class PrintHandler {
     constructor() {
@@ -346,8 +289,9 @@ class PrintHandler {
     
     beforePrint() {
         // Ensure all sections are expanded and visible
-        document.querySelectorAll('.legal-section').forEach(section => {
-            section.style.pageBreakInside = 'avoid';
+        // Don't force avoid on whole cards (causes blank pages). Prefer CSS on smaller blocks.
+        document.querySelectorAll('.lp-card-head, .lp-check-item, .lp-num-item').forEach(el => {
+            el.style.pageBreakInside = 'avoid';
         });
         
         // Add print timestamp
@@ -379,7 +323,7 @@ class PrintHandler {
                 ? `Documento exportado em ${timestamp}`
                 : `Document exported on ${timestamp}`;
             
-            const article = document.querySelector('.legal-article');
+            const article = document.querySelector('.lp-container') || document.querySelector('.legal-article') || document.querySelector('.legal-content');
             if (article) {
                 article.appendChild(printInfo);
             }
@@ -396,12 +340,53 @@ class PrintHandler {
     }
 }
 
+
+// Scroll-reveal for legal page cards (respects prefers-reduced-motion)
+class LegalPageScrollReveal {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        const elements = document.querySelectorAll('.lp-card[data-scroll-reveal], [data-scroll-reveal].lp-card');
+        if (!elements.length) return;
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) {
+            elements.forEach(el => el.classList.add('revealed'));
+            return;
+        }
+
+        // If homepage ScrollReveal already handled them, skip duplicates
+        const alreadyRevealed = Array.from(elements).every(el => el.classList.contains('revealed'));
+        if (alreadyRevealed) return;
+
+        if (!('IntersectionObserver' in window)) {
+            elements.forEach(el => el.classList.add('revealed'));
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        elements.forEach(el => {
+            if (!el.classList.contains('revealed')) observer.observe(el);
+        });
+    }
+}
+
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     new LegalPageAccessibility();
     new LegalPageNavigation();
-    new ScrollReveal();
     new PrintHandler();
+    new LegalPageScrollReveal();
     
     // Log for developers
     const lang = document.documentElement.getAttribute('lang');
