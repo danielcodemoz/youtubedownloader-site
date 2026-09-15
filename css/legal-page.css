@@ -129,14 +129,24 @@
     min-height: calc(100vh - 200px);
 }
 
-/* Neutralize any leaked homepage legal-section rules */
+/* Neutralize any leaked homepage legal-section rules.
+   Do NOT zero vertical margins — section.lp-section is more specific than
+   .lp-grid and was collapsing card-row spacing to 0. */
 .legal-page .lp-section,
 .legal-page section.lp-section {
     position: static;
     background: none;
     padding: 0;
-    margin: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    /* vertical rhythm between card rows / sections */
+    margin-bottom: 2.5rem;
     scroll-margin-top: 90px;
+}
+
+.legal-page .lp-section:last-child {
+    margin-bottom: 0;
 }
 
 .legal-page .lp-section::before,
@@ -145,25 +155,29 @@
     content: none !important;
 }
 
-/* Grid layouts */
-.legal-page .lp-grid {
+/* Grid layouts — horizontal + vertical gaps between cards */
+.legal-page .lp-grid,
+.legal-page section.lp-section.lp-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    row-gap: 2rem;
-    margin-bottom: 2rem;
+    column-gap: 2rem;
+    row-gap: 2.5rem;
+    gap: 2.5rem 2rem;
+    margin-bottom: 2.5rem;
 }
 
-.legal-page .lp-grid--3 {
+.legal-page .lp-grid--3,
+.legal-page section.lp-section.lp-grid--3 {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 2.5rem 2rem;
 }
 
-.legal-page .lp-stack {
+.legal-page .lp-stack,
+.legal-page section.lp-section.lp-stack {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    margin-bottom: 2rem;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
 /* Cards */
