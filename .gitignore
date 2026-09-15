@@ -1,0 +1,20 @@
+# Installers
+/download/*.exe
+/download/*.dmg
+/download/*.AppImage
+/download/*.deb
+/download/*.rpm
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Editor directories
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.log
