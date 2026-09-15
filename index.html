@@ -37,6 +37,7 @@
                 <div class="nav-links">
                     <a href="#features" class="nav-link">Funcionalidades</a>
                     <a href="#screenshots" class="nav-link">Capturas</a>
+                    <a href="#legal" class="nav-link">Uso Responsável</a>
                     <a href="#download" class="nav-link nav-link-cta">Descarregar</a>
                 </div>
             </div>
@@ -103,8 +104,9 @@
             </div>
             
             <div class="features-grid">
-                <div class="feature-card" data-scroll-reveal>
-                    <div class="feature-icon">
+                <div class="feature-card feature-card-hero" data-scroll-reveal>
+                    <div class="feature-badge">✨ Destaque</div>
+                    <div class="feature-icon feature-icon-hero">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
                             <rect x="4" y="4" width="24" height="24" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
                             <path d="M9 16H23M16 9V23"/>
@@ -272,6 +274,70 @@
         </div>
     </section>
 
+    <!-- Legal / Responsible Use Section -->
+    <section id="legal" class="legal-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Uso Responsável</h2>
+                <p class="section-description">Utilize o ytDownloader de forma ética e legal</p>
+            </div>
+
+            <div class="legal-grid">
+                <div class="legal-card" data-scroll-reveal>
+                    <div class="legal-icon">⚖️</div>
+                    <h3 class="legal-title">Respeite os Direitos de Autor</h3>
+                    <p class="legal-text">
+                        Descarregue apenas conteúdo que tem autorização para guardar. Verifique sempre as licenças 
+                        e permissões antes de descarregar qualquer vídeo.
+                    </p>
+                </div>
+
+                <div class="legal-card" data-scroll-reveal>
+                    <div class="legal-icon">🚫</div>
+                    <h3 class="legal-title">O Que NÃO Descarregar</h3>
+                    <div class="legal-text">
+                        <ul class="legal-list">
+                            <li>Conteúdo comercial protegido sem permissão</li>
+                            <li>Filmes, música ou programas de TV pirateados</li>
+                            <li>Conteúdo que viole os Termos de Serviço do YouTube</li>
+                            <li>Material ilegal ou prejudicial</li>
+                            <li>Vídeos privados ou restritos sem autorização do criador</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="legal-card" data-scroll-reveal>
+                    <div class="legal-icon">✅</div>
+                    <h3 class="legal-title">Uso Pessoal e Autorizado</h3>
+                    <p class="legal-text">
+                        Esta ferramenta destina-se exclusivamente a uso pessoal e para descarregar conteúdo 
+                        que tem autorização para armazenar. Você é responsável por garantir que os seus downloads 
+                        cumprem todas as leis aplicáveis e os termos de serviço das plataformas.
+                    </p>
+                </div>
+
+                <div class="legal-card" data-scroll-reveal>
+                    <div class="legal-icon">📜</div>
+                    <h3 class="legal-title">Termos de Serviço do YouTube</h3>
+                    <p class="legal-text">
+                        Esteja ciente de que descarregar vídeos pode violar os Termos de Serviço do YouTube. 
+                        Utilize esta ferramenta apenas para conteúdo do qual é proprietário, tem permissão 
+                        explícita, ou que está disponível sob licenças Creative Commons que permitam download.
+                    </p>
+                </div>
+            </div>
+
+            <div class="legal-disclaimer" data-scroll-reveal>
+                <p>
+                    <strong>Aviso Importante:</strong> O ytDownloader é uma ferramenta fornecida "como está" 
+                    para uso pessoal. O utilizador assume toda a responsabilidade pelo cumprimento das leis de 
+                    direitos de autor, termos de serviço das plataformas, e regulamentos aplicáveis na sua jurisdição. 
+                    Os desenvolvedores não se responsabilizam por qualquer uso indevido desta ferramenta.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -292,10 +358,14 @@
                     </div>
                     
                     <div class="footer-column">
-                        <h4>Tecnologia</h4>
-                        <a href="https://tauri.app" target="_blank" rel="noopener">Tauri</a>
-                        <a href="https://github.com/yt-dlp/yt-dlp" target="_blank" rel="noopener">yt-dlp</a>
-                        <a href="https://ffmpeg.org" target="_blank" rel="noopener">FFmpeg</a>
+                        <h4>Legal</h4>
+                        <a href="#legal">Uso Responsável</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Desenvolvedor</h4>
+                        <a href="https://danielpro.dev" target="_blank" rel="noopener">Portfólio</a>
+                        <a href="https://github.com/danielpro4" target="_blank" rel="noopener">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -303,10 +373,11 @@
             <div class="footer-legal">
                 <p class="copyright-notice">
                     <strong>Aviso Legal:</strong> Descarregue apenas conteúdo que está autorizado a guardar e utilizar. 
-                    Respeite os direitos de autor e os termos de serviço aplicáveis ao conteúdo e plataforma.
+                    Respeite os direitos de autor e os termos de serviço aplicáveis ao conteúdo e plataforma. 
+                    <a href="#legal" class="legal-link">Saiba mais</a>
                 </p>
                 <p class="footer-copyright">
-                    © 2026 ytDownloader. Desenvolvido com ❤️ em Portugal.
+                    © 2026 ytDownloader. Desenvolvido por <a href="https://danielpro.dev" target="_blank" rel="noopener" class="footer-link">Daniel Marcos</a> em Moçambique 🇲🇿
                 </p>
             </div>
         </div>
