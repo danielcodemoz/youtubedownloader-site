@@ -28,7 +28,7 @@ class ThemeManager {
             this.themeToggle.addEventListener('click', () => {
                 const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
                 const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                this.setTheme(newTheme);
+                this.setTheme(newTheme, true);
             });
         }
 
@@ -40,11 +40,54 @@ class ThemeManager {
         });
     }
 
-    setTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
+    setTheme(theme, withTransition = false) {
+        // Check if user prefers reduced motion
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         
-        // Update nav background immediately
+        if (withTransition && !prefersReducedMotion) {
+            this.createThemeTransition(theme);
+        } else {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            this.updateNavBackground(theme);
+        }
+    }
+
+    createThemeTransition(theme) {
+        // Create transition overlay
+        const overlay = document.createElement('div');
+        overlay.style.cssText = `
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            pointer-events: none;
+            background: ${theme === 'light' ? '#faf8f5' : '#0f0f0f'};
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        `;
+        document.body.appendChild(overlay);
+
+        // Fade in
+        requestAnimationFrame(() => {
+            overlay.style.opacity = '1';
+        });
+
+        // Change theme at peak opacity
+        setTimeout(() => {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            this.updateNavBackground(theme);
+
+            // Fade out
+            overlay.style.opacity = '0';
+            
+            setTimeout(() => {
+                overlay.remove();
+            }, 300);
+        }, 300);
+    }
+
+    updateNavBackground(theme) {
         const nav = document.querySelector('.nav');
         if (nav) {
             if (theme === 'light') {
