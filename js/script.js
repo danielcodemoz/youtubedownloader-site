@@ -3,6 +3,59 @@
  * Interactive features and scroll animations
  */
 
+// Theme Management
+class ThemeManager {
+    constructor() {
+        this.themeToggle = document.getElementById('themeToggle');
+        this.init();
+    }
+
+    init() {
+        // Check for saved theme preference or default to system preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (savedTheme) {
+            this.setTheme(savedTheme);
+        } else if (prefersDark) {
+            this.setTheme('dark');
+        } else {
+            this.setTheme('light');
+        }
+
+        // Listen for theme toggle clicks
+        if (this.themeToggle) {
+            this.themeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                this.setTheme(newTheme);
+            });
+        }
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                this.setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+    }
+
+    setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        
+        // Update nav background immediately
+        const nav = document.querySelector('.nav');
+        if (nav) {
+            if (theme === 'light') {
+                nav.style.background = 'rgba(250, 248, 245, 0.9)';
+            } else {
+                nav.style.background = 'rgba(15, 15, 15, 0.8)';
+            }
+        }
+    }
+}
+
 // Smooth scroll reveal animation
 class ScrollReveal {
     constructor() {
@@ -56,12 +109,22 @@ class NavbarScroll {
     init() {
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
+            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
             
             if (currentScroll > 100) {
-                this.nav.style.background = 'rgba(10, 10, 10, 0.95)';
-                this.nav.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.2)';
+                if (isLight) {
+                    this.nav.style.background = 'rgba(250, 248, 245, 0.98)';
+                    this.nav.style.boxShadow = '0 4px 16px rgba(218, 68, 83, 0.1)';
+                } else {
+                    this.nav.style.background = 'rgba(15, 15, 15, 0.95)';
+                    this.nav.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.2)';
+                }
             } else {
-                this.nav.style.background = 'rgba(10, 10, 10, 0.8)';
+                if (isLight) {
+                    this.nav.style.background = 'rgba(250, 248, 245, 0.9)';
+                } else {
+                    this.nav.style.background = 'rgba(15, 15, 15, 0.8)';
+                }
                 this.nav.style.boxShadow = 'none';
             }
             
@@ -358,6 +421,7 @@ class ScreenshotLightbox {
 
 // Initialize all features when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
+    new ThemeManager();
     new ScrollReveal();
     new NavbarScroll();
     new SmoothScroll();
