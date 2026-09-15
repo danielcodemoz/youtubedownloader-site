@@ -57,7 +57,12 @@ server {
     index index.html;
     
     location / {
-        try_files $uri $uri/ =404;
+        try_files $uri $uri/ $uri.html =404;
+    }
+    
+    # Redirect old legal page URL to new directory
+    location = /uso-responsavel.html {
+        return 301 /uso-responsavel/;
     }
     
     # Cache static assets
@@ -67,6 +72,8 @@ server {
     }
 }
 ```
+
+**Note:** The `try_files $uri $uri/ $uri.html =404;` directive enables directory-based routing, allowing `/uso-responsavel/` to serve `/uso-responsavel/index.html` automatically.
 
 ## Adding the Installer
 

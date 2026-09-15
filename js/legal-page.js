@@ -1,6 +1,6 @@
 /**
  * Legal Page Accessibility Features
- * Text sizing, high contrast, and PDF export
+ * Text sizing, high contrast, PDF export, and scroll reveal
  */
 
 class LegalPageAccessibility {
@@ -270,6 +270,63 @@ class LegalPageNavigation {
     }
 }
 
+// Scroll Reveal for .lp-card elements
+class ScrollReveal {
+    constructor() {
+        this.cards = document.querySelectorAll('.lp-card');
+        this.observer = null;
+        this.init();
+    }
+    
+    init() {
+        if (this.cards.length === 0) return;
+        
+        // Check if browser supports IntersectionObserver
+        if (!('IntersectionObserver' in window)) {
+            // Fallback: reveal all cards immediately
+            this.cards.forEach(card => card.classList.add('revealed'));
+            return;
+        }
+        
+        // Respect prefers-reduced-motion
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        
+        if (prefersReducedMotion) {
+            // If user prefers reduced motion, reveal all immediately
+            this.cards.forEach(card => card.classList.add('revealed'));
+            return;
+        }
+        
+        // Set up Intersection Observer
+        const options = {
+            root: null,
+            rootMargin: '0px 0px -100px 0px',
+            threshold: 0.1
+        };
+        
+        this.observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    // Optional: stop observing once revealed
+                    this.observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+        
+        // Observe each card
+        this.cards.forEach(card => {
+            this.observer.observe(card);
+        });
+    }
+    
+    destroy() {
+        if (this.observer) {
+            this.observer.disconnect();
+        }
+    }
+}
+
 // Print event handling
 class PrintHandler {
     constructor() {
@@ -343,6 +400,7 @@ class PrintHandler {
 document.addEventListener('DOMContentLoaded', () => {
     new LegalPageAccessibility();
     new LegalPageNavigation();
+    new ScrollReveal();
     new PrintHandler();
     
     // Log for developers

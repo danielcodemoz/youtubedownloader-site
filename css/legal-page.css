@@ -1,6 +1,6 @@
 /**
  * Legal Page Specific Styles
- * Accessibility-focused legal documentation page
+ * Accessibility-focused legal documentation page with proper scoping
  */
 
 /* Skip Link */
@@ -30,8 +30,8 @@
     padding-top: 70px;
 }
 
-/* Focus Visible Styles */
-:focus-visible {
+/* Focus Visible Styles - Scoped to legal page */
+.legal-page :focus-visible {
     outline: 3px solid var(--color-primary);
     outline-offset: 2px;
     border-radius: 4px;
@@ -113,14 +113,15 @@
     line-height: 1.6;
 }
 
-/* Legal Content */
+/* Legal Content Container */
 .legal-content {
     padding: 2rem 0 4rem;
     min-height: calc(100vh - 200px);
 }
 
+/* Legal Article - Single-column layout with max-width */
 .legal-article {
-    max-width: 800px;
+    max-width: 1160px;
     margin: 0 auto;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
@@ -129,6 +130,27 @@
     box-shadow: var(--shadow-lg);
 }
 
+/* Light mode: ensure dark text on white background */
+[data-theme="light"] .legal-article {
+    background: #ffffff;
+    color: #1a1a1a;
+}
+
+[data-theme="light"] .legal-article h1,
+[data-theme="light"] .legal-article h2,
+[data-theme="light"] .legal-article h3,
+[data-theme="light"] .legal-section h2,
+[data-theme="light"] .legal-section h3 {
+    color: #1a1a1a;
+}
+
+[data-theme="light"] .legal-article p,
+[data-theme="light"] .legal-section p,
+[data-theme="light"] .legal-list li {
+    color: #333333;
+}
+
+/* Legal Sections inside article */
 .legal-section {
     margin-bottom: 3rem;
     scroll-margin-top: 90px;
@@ -192,6 +214,11 @@
 
 .legal-list li strong {
     color: var(--color-text);
+}
+
+/* Light mode list items */
+[data-theme="light"] .legal-list li strong {
+    color: #1a1a1a;
 }
 
 /* Ordered lists */
