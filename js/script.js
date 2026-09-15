@@ -224,11 +224,44 @@ class CursorGlow {
 class CardTilt {
     constructor() {
         this.cards = document.querySelectorAll('.feature-card');
+        this.prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         this.init();
     }
 
     init() {
+        if (this.prefersReducedMotion) return;
+        
         this.cards.forEach(card => {
+            const isHero = card.classList.contains('feature-card-hero');
+            
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                // Gentler tilt for hero card, stronger for others
+                const strength = isHero ? 10 : 20;
+                const rotateX = (y - centerY) / strength;
+                const rotateY = (centerX - x) / strength;
+                
+                if (isHero) {
+                    card.style.transform = `translateY(-12px) scale(1.02) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                } else {
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+                }
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+        
+        // Also add tilt to legal cards
+        const legalCards = document.querySelectorAll('.legal-card');
+        legalCards.forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
                 const x = e.clientX - rect.left;
@@ -335,7 +368,8 @@ document.addEventListener('DOMContentLoaded', () => {
     new ScreenshotLightbox();
     
     console.log('%c ytDownloader ', 'background: #DA4453; color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold;');
-    console.log('Built with ❤️ in Portugal');
+    console.log('Desenvolvido por Daniel Marcos em Moçambique 🇲🇿');
+    console.log('Portfólio: https://danielpro.dev');
 });
 
 // Preload critical images
