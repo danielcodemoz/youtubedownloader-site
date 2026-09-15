@@ -246,7 +246,7 @@ body {
     bottom: -1px;
     left: 0;
     right: 0;
-    height: 150px;
+    height: 200px;
     background: linear-gradient(to top, var(--color-surface), transparent);
     pointer-events: none;
     z-index: 1;
@@ -477,7 +477,7 @@ section::after {
     position: absolute;
     left: 0;
     right: 0;
-    height: 120px;
+    height: 200px;
     pointer-events: none;
     z-index: 0;
 }
@@ -1102,7 +1102,7 @@ section::after {
 
 .footer-links {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
 
