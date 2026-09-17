@@ -455,9 +455,74 @@ class ScreenshotLightbox {
     }
 }
 
+// Mobile menu management
+class MobileMenu {
+    constructor() {
+        this.toggle = document.getElementById('mobileMenuToggle');
+        this.navLinks = document.querySelector('.nav-links');
+        this.links = document.querySelectorAll('.nav-link');
+        this.init();
+    }
+
+    init() {
+        if (!this.toggle || !this.navLinks) return;
+
+        // Toggle menu on button click
+        this.toggle.addEventListener('click', () => {
+            this.toggleMenu();
+        });
+
+        // Close menu when clicking a link
+        this.links.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    this.closeMenu();
+                }
+            });
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.navLinks.classList.contains('active')) {
+                this.closeMenu();
+            }
+        });
+
+        // Close menu on window resize if larger than mobile breakpoint
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768 && this.navLinks.classList.contains('active')) {
+                this.closeMenu();
+            }
+        });
+    }
+
+    toggleMenu() {
+        const isExpanded = this.toggle.getAttribute('aria-expanded') === 'true';
+        
+        if (isExpanded) {
+            this.closeMenu();
+        } else {
+            this.openMenu();
+        }
+    }
+
+    openMenu() {
+        this.navLinks.classList.add('active');
+        this.toggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeMenu() {
+        this.navLinks.classList.remove('active');
+        this.toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+}
+
 // Initialize all features when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     new ThemeManager();
+    new MobileMenu();
     new ScrollReveal();
     new NavbarScroll();
     new SmoothScroll();
