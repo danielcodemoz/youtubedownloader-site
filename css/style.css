@@ -1291,29 +1291,52 @@ section::after {
     /* Show mobile menu toggle */
     .mobile-menu-toggle {
         display: flex;
+        position: relative;
+        z-index: 1002;
     }
     
-    /* Mobile navigation overlay */
+    /* backdrop-filter on .nav traps position:fixed children — expand nav instead */
+    .nav:has(.nav-links.active) {
+        height: 100dvh;
+        height: 100vh;
+        overflow-y: auto;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: var(--color-surface);
+    }
+    
+    .nav-content {
+        position: relative;
+        flex-wrap: wrap;
+    }
+    
+    /* Mobile navigation panel (absolute inside fixed .nav, not viewport-fixed) */
     .nav-links {
-        position: fixed;
+        position: absolute;
         top: 70px;
         left: 0;
         right: 0;
-        bottom: 0;
+        width: 100%;
+        min-height: calc(100dvh - 70px);
+        min-height: calc(100vh - 70px);
         background: var(--color-surface);
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-        padding: 2rem;
+        padding: 1.25rem 1.5rem 2.5rem;
         transform: translateX(100%);
         transition: transform var(--transition-base);
         overflow-y: auto;
-        z-index: 999;
+        z-index: 1001;
         border-top: 1px solid var(--color-border);
+        visibility: hidden;
+        pointer-events: none;
     }
     
     .nav-links.active {
         transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
     }
     
     .nav-link {
@@ -1349,7 +1372,11 @@ section::after {
     
     /* Adjust hero padding to account for fixed nav */
     .hero {
-        padding: 110px 0 80px;
+        padding: 120px 0 80px;
+    }
+    
+    .hero-badge {
+        margin-top: 0.25rem;
     }
     
     .hero-title {
@@ -1444,7 +1471,7 @@ section::after {
     }
     
     .hero {
-        padding: 90px 0 60px;
+        padding: 110px 0 60px;
     }
     
     .hero-title {
@@ -1517,3 +1544,10 @@ section::after {
 [data-scroll-reveal]:nth-child(4) { transition-delay: 0.3s; }
 [data-scroll-reveal]:nth-child(5) { transition-delay: 0.4s; }
 [data-scroll-reveal]:nth-child(6) { transition-delay: 0.5s; }
+
+
+/* Lock page scroll while mobile menu is open */
+body.mobile-menu-open {
+    overflow: hidden;
+    touch-action: none;
+}
