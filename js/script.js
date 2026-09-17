@@ -508,12 +508,14 @@ class MobileMenu {
 
     openMenu() {
         this.navLinks.classList.add('active');
+        document.body.classList.add('mobile-menu-open');
         this.toggle.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden';
     }
 
     closeMenu() {
         this.navLinks.classList.remove('active');
+        document.body.classList.remove('mobile-menu-open');
         this.toggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     }
