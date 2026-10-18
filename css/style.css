@@ -1551,3 +1551,10 @@ body.mobile-menu-open {
     overflow: hidden;
     touch-action: none;
 }
+
+/* Apoiar no menu mobile: botão largo com texto, como os outros itens */
+@media (max-width: 768px) {
+    .nav-links .nav-apoiar { display: block; width: 100%; }
+    .nav-links .nav-apoiar button.dp-apoiar-btn.dp-nav { width: 100%; height: auto; padding: .85em 1em !important; justify-content: center; font-size: 1rem; border-radius: 12px !important; }
+    .nav-links .nav-apoiar button.dp-apoiar-btn.dp-nav .dp-l { display: inline; }
+}
