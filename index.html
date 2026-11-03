@@ -25,7 +25,7 @@
     <link rel="icon" type="image/png" href="/assets/favicon-32.png" sizes="32x32">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     
-    <link rel="stylesheet" href="/css/style.css?v=4b392282">
+    <link rel="stylesheet" href="/css/style.css?v=1.1.0a">
     <link rel="stylesheet" href="/css/navbar-icons.css?v=3570f947">
 </head>
 <body>
@@ -60,6 +60,12 @@
                             <path d="M1 11L5 7L8 10L11 7L15 11V12C15 12.5 14.5 13 14 13H2C1.5 13 1 12.5 1 12V11Z" fill="currentColor"/>
                         </svg>
                         <span data-i18n="nav.screenshots">Capturas</span>
+                    </a>
+                    <a href="#novidades" class="nav-link">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="nav-icon" aria-hidden="true">
+                            <path d="M8 0L10 6H16L11 10L13 16L8 12L3 16L5 10L0 6H6L8 0Z"/>
+                        </svg>
+                        <span data-i18n="nav.whatsnew">Novidades</span>
                     </a>
                     <a href="#legal" class="nav-link">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="nav-icon" aria-hidden="true">
@@ -105,13 +111,14 @@
         <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">
+                <a href="#novidades" class="hero-badge hero-badge-link">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-                        <path d="M8 12L3 7L4.4 5.6L7 8.2V0H9V8.2L11.6 5.6L13 7L8 12Z"/>
-                        <rect y="14" width="16" height="2"/>
+                        <path d="M8 0L10 6H16L11 10L13 16L8 12L3 16L5 10L0 6H6L8 0Z"/>
                     </svg>
-                    <span data-i18n="hero.badge">Versão 1.0.0 disponível</span>
-                </div>
+                    <span data-i18n="hero.badge">Novidades da v1.1.0</span>
+                    <span class="badge-soon" data-release-soon data-i18n="versions.soon">Em breve</span>
+                    <span class="badge-new" data-release-ready hidden data-i18n="versions.new">Novo</span>
+                </a>
                 <h1 class="hero-title">
                     <span data-i18n="hero.title">Descarregue vídeos do YouTube</span>
                     <span class="hero-title-accent" data-i18n="hero.title.accent">com facilidade</span>
@@ -121,7 +128,7 @@
                     Rápido, elegante e com funcionalidades poderosas que tornam tudo mais simples.
                 </p>
                 <div class="hero-ctas">
-                    <a href="/download/ytDownloader_1.0.0_x64-setup.exe" class="btn btn-primary" download>
+                    <a href="/download/ytDownloader_1.0.0_x64-setup.exe" class="btn btn-primary" download data-download-link>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path d="M10 15L4 9L5.5 7.5L9 11V0H11V11L14.5 7.5L16 9L10 15Z"/>
                             <rect y="17" width="20" height="3"/>
@@ -137,7 +144,7 @@
                         <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
                         <path d="M8 4V8L11 11"/>
                     </svg>
-                    <span data-i18n="hero.info">Gratuito · Windows 10/11 · v1.0.0 · 45MB</span>
+                    <span data-i18n="hero.info">Gratuito · Windows 10/11</span> · <span data-version>v1.0.0</span> · <span data-size>45MB</span>
                 </p>
             </div>
             <div class="hero-visual">
@@ -285,6 +292,30 @@
         </div>
     </section>
 
+    <!-- What's new -->
+    <section id="novidades" class="whatsnew">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="whatsnew.title">Novidades da versão 1.1.0</h2>
+                <p class="section-description" data-i18n="whatsnew.description">Continua simples: cole um link e prima Enter. O resto está à mão quando precisar.</p>
+                <p class="whatsnew-status">
+                    <span class="status-pill status-soon" data-release-soon data-i18n="whatsnew.status.soon">Em breve · o instalador está a ser preparado</span>
+                    <span class="status-pill status-ready" data-release-ready hidden data-i18n="whatsnew.status.ready">Disponível agora</span>
+                </p>
+            </div>
+            <ul class="whatsnew-grid">
+                <li class="whatsnew-item"><h3 data-i18n="whatsnew.sites.title">Mais sites</h3><p data-i18n="whatsnew.sites.text">Vídeos públicos do Vimeo, TikTok, X, Instagram e Facebook, além do YouTube. O site é detetado automaticamente.</p></li>
+                <li class="whatsnew-item"><h3 data-i18n="whatsnew.home.title">Novo ecrã inicial</h3><p data-i18n="whatsnew.home.text">Uma caixa grande "Cole um link", com Ctrl+V e Enter, e uma barra lateral nova.</p></li>
+                <li class="whatsnew-item"><h3 data-i18n="whatsnew.audio.title">Só áudio MP3 ou M4A</h3><p data-i18n="whatsnew.audio.text">Escolha o formato de áudio, com capa e metadados incluídos.</p></li>
+                <li class="whatsnew-item"><h3 data-i18n="whatsnew.subs.title">Legendas e capítulos</h3><p data-i18n="whatsnew.subs.text">Legendas manuais ou automáticas, por idioma, embutidas ou em ficheiro. Capítulos e SponsorBlock opcional.</p></li>
+                <li class="whatsnew-item"><h3 data-i18n="whatsnew.hotkeys.title">Atalhos globais</h3><p data-i18n="whatsnew.hotkeys.text">Ctrl+Shift+D (vídeo) e Ctrl+Shift+M (áudio) descarregam o link copiado. Vêm desligados e pode mudá-los.</p></li>
+                <li class="whatsnew-item"><h3 data-i18n="whatsnew.tools.title">Ferramentas FFmpeg</h3><p data-i18n="whatsnew.tools.text">Cortar, comprimir, converter, criar GIF, extrair áudio, mudar resolução e ver informação do ficheiro, com progresso e cancelar.</p></li>
+                <li class="whatsnew-item"><h3 data-i18n="whatsnew.update.title">Atualizações automáticas</h3><p data-i18n="whatsnew.update.text">A partir da 1.1.0, a app avisa quando há uma versão nova e instala-a por si.</p></li>
+                <li class="whatsnew-item"><h3 data-i18n="whatsnew.rights.title">Uso responsável</h3><p data-i18n="whatsnew.rights.text">Cursos pagos (Hotmart, Udemy, Kiwify), conteúdo com DRM e publicações privadas continuam bloqueados.</p></li>
+            </ul>
+        </div>
+    </section>
+
     <!-- Download Section -->
     <section id="download" class="download-section">
         <div class="container">
@@ -297,12 +328,12 @@
                     <p class="download-description" data-i18n="download.description">
                         Descarregue o ytDownloader gratuitamente e comece a guardar os seus vídeos favoritos hoje.
                     </p>
-                    <a href="/download/ytDownloader_1.0.0_x64-setup.exe" class="btn btn-primary btn-large" download>
+                    <a href="/download/ytDownloader_1.0.0_x64-setup.exe" class="btn btn-primary btn-large" download data-download-link>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M12 16L6 10L7.5 8.5L11 12V0H13V12L16.5 8.5L18 10L12 16Z"/>
                             <rect y="20" width="24" height="4"/>
                         </svg>
-                        <span data-i18n="download.button">Descarregar ytDownloader v1.0.0</span>
+                        <span><span data-i18n="download.button">Descarregar ytDownloader</span> <span data-version>v1.0.0</span></span>
                     </a>
                     <div class="download-specs">
                         <div class="spec">
@@ -316,7 +347,7 @@
                                 <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
                                 <path d="M8 4V8L11 11"/>
                             </svg>
-                            <span data-i18n="download.spec.size">45MB</span>
+                            <span data-size>45MB</span>
                         </div>
                         <div class="spec">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
@@ -325,6 +356,17 @@
                             <span data-i18n="download.spec.price">Gratuito</span>
                         </div>
                     </div>
+                    <p class="download-soon" data-release-soon data-i18n="download.soon">A v1.1.0 está quase pronta. Entretanto, este botão descarrega a v1.0.0. Quando a v1.1.0 sair, descarregue-a aqui uma vez. A partir daí, a app atualiza-se sozinha.</p>
+                    <details class="older-versions" id="versoes">
+                        <summary data-i18n="versions.title">Todas as versões</summary>
+                        <ul id="older-versions-list" class="older-versions-list">
+                            <li class="older-version">
+                                <span class="older-version-name">v1.0.0</span>
+                                <span class="older-version-meta">2026-09 · 45MB</span>
+                                <a class="older-version-link" href="/download/ytDownloader_1.0.0_x64-setup.exe" download data-i18n="versions.download">Descarregar</a>
+                            </li>
+                        </ul>
+                    </details>
                 </div>
             </div>
         </div>
@@ -476,7 +518,9 @@
                         <h4 data-i18n="footer.product">Produto</h4>
                         <a href="#features" data-i18n="footer.product.features">Funcionalidades</a>
                         <a href="#screenshots" data-i18n="footer.product.screenshots">Capturas de Ecrã</a>
+                        <a href="#novidades" data-i18n="footer.product.whatsnew">Novidades</a>
                         <a href="#download" data-i18n="footer.product.download">Descarregar</a>
+                        <a href="#versoes" data-i18n="footer.product.versions">Versões anteriores</a>
                     </div>
                     
                     <div class="footer-column">
@@ -505,8 +549,9 @@
         </div>
     </footer>
 
-    <script src="/js/i18n.js?v=314cbcf8"></script>
+    <script src="/js/i18n.js?v=1.1.0a"></script>
     <script src="/js/apoiar.js?v=2.5.a3b8c9a8" data-theme="default-dark" defer></script>
     <script src="/js/script.js?v=9764a05a"></script>
+    <script src="/js/version.js?v=1.1.0a" defer></script>
 </body>
 </html>
