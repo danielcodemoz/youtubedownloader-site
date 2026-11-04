@@ -1552,6 +1552,27 @@ body.mobile-menu-open {
     touch-action: none;
 }
 
+/* Apoiar dialog matches the site palette in both themes.
+   Variables live on .dp-support so light and dark do not share one background. */
+.dp-support {
+    --dp-support-accent: #DA4453;
+    --dp-support-bg: #ffffff;
+    --dp-support-fg: #1a1a1a;
+    --dp-support-muted: #4a4a4a;
+    --dp-support-line: #e5e3e0;
+    --dp-support-card: #faf7f3;
+    --dp-support-glow: rgba(218, 68, 83, 0.14);
+}
+
+.dp-support[data-mode="dark"] {
+    --dp-support-bg: #1a1a1a;
+    --dp-support-fg: #ffffff;
+    --dp-support-muted: #b0b0b0;
+    --dp-support-line: #2a2a2a;
+    --dp-support-card: #242424;
+    --dp-support-glow: rgba(218, 68, 83, 0.28);
+}
+
 /* Apoiar no menu mobile: botão largo com texto, como os outros itens */
 @media (max-width: 768px) {
     .nav-links .nav-apoiar { display: block; width: 100%; }

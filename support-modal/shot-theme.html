@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head><meta charset="utf-8"><title>theme</title></head>
+<body>
+<script>
+  var q = new URLSearchParams(location.search);
+  var theme = q.get('theme') === 'light' ? 'light' : 'dark';
+  var lang = q.get('lang') === 'en' ? 'en' : 'pt';
+  localStorage.setItem('theme', theme);
+  localStorage.setItem('ytd-lang', lang);
+  location.replace('/#apoiar');
+</script>
+</body>
+</html>
