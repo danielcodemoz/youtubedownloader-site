@@ -1,0 +1,11 @@
+{
+  "version": "1.1.0",
+  "notes": "PT: Vimeo, TikTok, X, Instagram e Facebook públicos; ferramentas FFmpeg com vários ficheiros e editor visual de corte/resolução; MP3/M4A; legendas, capítulos e SponsorBlock; atalhos; tema claro/escuro na barra lateral; glow no cartão; instalador mais pequeno.\nEN: Public Vimeo, TikTok, X, Instagram and Facebook; FFmpeg tools with batch and visual trim/resolution editor; MP3/M4A; subtitles, chapters and SponsorBlock; hotkeys; sidebar theme toggle; card glow; smaller installer.",
+  "pub_date": "2026-11-04T09:00:11Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSZHVHR0xBZjVnRkRZNndJVHpSM1l2OGc2V0JDd3Z6cmsxWWxmMDFJODNMV3REZWtEQUZoRkVSOHJYTmlYZkJMdDB1UDBWS1U0Vk91M2kyNXpmUFN1SndrSFNMUWpiQkFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzNzgxNDk1CWZpbGU6eXREb3dubG9hZGVyXzEuMS4wX3g2NC1zZXR1cC5leGUKbTdOWFRneVhwWEYvdVFvaWVBSnJSNnZ5eUlYQ29vRFZrcndzbnpMUkg5Y0ZESjlPL09KZ3pjclZaaXVPeC9QcFdGRDVBK3VlRVJqZ1NyYndaQys5RHc9PQo=",
+      "url": "https://youtubedownloader.danielpro.dev/download/ytDownloader_1.1.0_x64-setup.exe"
+    }
+  }
+}

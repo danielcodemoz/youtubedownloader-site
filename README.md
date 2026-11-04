@@ -16,6 +16,7 @@ ytDownloader is a Tauri + React desktop application powered by yt-dlp and FFmpeg
 - 🌓 **Light & Dark Mode** - Beautiful interface that adapts to your preference
 - 🎬 **Quality Selection** - Choose video quality (720p, 1080p, 4K)
 - ⚡ **Auto Updates** - Integrated yt-dlp and FFmpeg updates
+- 🆕 **v1.1.0** - Other public sites (Vimeo, TikTok, X, Instagram, Facebook), MP3/M4A, subtitles, chapters, SponsorBlock, global shortcuts, FFmpeg tools and in-app updates
 
 ## Website Stack
 
@@ -32,8 +33,13 @@ youtubedownloader-site/
 ├── index.html          # Main landing page
 ├── css/
 │   └── style.css      # Styles with animations
+├── version.json       # Releases list read by the download buttons
+├── updates/
+│   └── latest.json    # Tauri updater manifest (template until 1.1.0 is signed)
 ├── js/
-│   └── script.js      # Interactive features
+│   ├── i18n.js        # PT/EN texts
+│   ├── script.js      # Interactive features
+│   └── version.js     # Reads version.json
 ├── assets/
 │   └── logo.svg       # Brand logo
 ├── shots/
@@ -75,15 +81,40 @@ server {
 
 **Note:** The `try_files $uri $uri/ $uri.html =404;` directive enables directory-based routing, allowing `/uso-responsavel/` to serve `/uso-responsavel/index.html` automatically.
 
-## Adding the Installer
+## Versions and releases
 
-Place the Windows installer in the `download/` folder:
+The download buttons read **`/version.json`**. Releases are listed newest first. The buttons
+point at the newest release with `"available": true`. The "All versions" list in the download
+section shows every release, so older installers stay downloadable.
 
-```bash
-cp ytDownloader_1.0.0_x64-setup.exe download/
+Without JavaScript, or if `version.json` can't be read, the HTML still links to v1.0.0.
+
+### Publishing a new version (example: 1.1.0)
+
+1. Build the signed installer in the app repo (see its README → Release).
+2. Upload the installer:
+   `scp ytDownloader_1.1.0_x64-setup.exe <server>:/var/www/youtubedownloader/download/`
+   Keep `ytDownloader_1.0.0_x64-setup.exe` there for the "All versions" list.
+3. Edit `updates/latest.json`. Set `signature` to the **full text** of
+   `ytDownloader_1.1.0_x64-setup.exe.sig`, then check `version`, `url`, `notes` and `pub_date`.
+   Upload it to `/var/www/youtubedownloader/updates/latest.json`.
+   Apps from v1.1.0 on check this file at startup.
+4. In `version.json`, set `"available": true` on 1.1.0. That one change switches the buttons,
+   the version label, the size and the "Coming soon" badges.
+
+Until step 4, the site shows "Coming soon" for 1.1.0 and the buttons give v1.0.0.
+
+### nginx: don't cache the release files
+
+Add these blocks so a new `version.json` or `latest.json` is picked up at once:
+
+```nginx
+location = /version.json { add_header Cache-Control "no-cache"; }
+location ^~ /updates/    { add_header Cache-Control "no-cache"; }
 ```
 
-The download button on the site links to `/download/ytDownloader_1.0.0_x64-setup.exe`.
+JS and CSS are cached for 1 year (`immutable`), so bump the `?v=` query in `index.html`
+whenever `js/*.js` or `css/style.css` changes.
 
 ## Local Development
 
@@ -128,4 +159,4 @@ Marketing website content © 2026. Application powered by open-source technologi
 
 ---
 
-Built with ❤️ in Portugal by [danielcodemoz](https://github.com/danielcodemoz)
+Built with ❤️ in Mozambique by [Daniel Marcos](https://danielpro.dev)

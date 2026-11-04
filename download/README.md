@@ -2,16 +2,18 @@
 
 This folder contains the installer files for ytDownloader.
 
-## Current Release
+## Releases
 
-**Version:** 1.0.0  
-**File:** `ytDownloader_1.0.0_x64-setup.exe`  
-**Size:** ~45MB  
-**Platform:** Windows 10/11 (x64)
+| Version | File | Size | Status |
+|---|---|---|---|
+| 1.1.0 | `ytDownloader_1.1.0_x64-setup.exe` | ~50MB | Coming soon. Upload it, then set `"available": true` in `/version.json` |
+| 1.0.0 | `ytDownloader_1.0.0_x64-setup.exe` | ~45MB | Available. Keep this file, the "All versions" list links to it |
+
+Platform: Windows 10/11 (x64). Installers are not committed to git; upload them to the server.
 
 ## Installation Instructions
 
-1. Download `ytDownloader_1.0.0_x64-setup.exe`
+1. Download the installer (`ytDownloader_<version>_x64-setup.exe`)
 2. Run the installer
 3. Follow the setup wizard
 4. Launch ytDownloader from your Start menu
