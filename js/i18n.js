@@ -19,7 +19,8 @@ const translations = {
         
         // Hero
         'hero.badge': "Novidades da v1.1.0",
-        'hero.title': 'Descarregue vídeos do YouTube',
+        'hero.title': 'Descarregue vídeos do',
+        'hero.title.sr': 'YouTube, Facebook, Instagram, X, TikTok e Vimeo',
         'hero.title.accent': 'com facilidade',
         'hero.description': 'ytDownloader é a aplicação Windows definitiva para descarregar os seus vídeos favoritos. Rápido, elegante e com funcionalidades poderosas que tornam tudo mais simples.',
         'hero.cta.primary': 'Descarregar para Windows',
@@ -239,7 +240,8 @@ const translations = {
         
         // Hero
         'hero.badge': "What's new in v1.1.0",
-        'hero.title': 'Download YouTube videos',
+        'hero.title': 'Download videos from',
+        'hero.title.sr': 'YouTube, Facebook, Instagram, X, TikTok and Vimeo',
         'hero.title.accent': 'with ease',
         'hero.description': 'ytDownloader is the definitive Windows application for downloading your favorite videos. Fast, elegant, and packed with powerful features that make everything simpler.',
         'hero.cta.primary': 'Download for Windows',
