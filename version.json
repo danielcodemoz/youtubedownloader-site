@@ -5,8 +5,10 @@
       "version": "1.1.0",
       "date": "2026-11",
       "file": "/download/ytDownloader_1.1.0_x64-setup.exe",
-      "size": "≈ 50MB",
-      "available": false
+      "size": "81MB",
+      "available": true,
+      "sha256": "9bec8440cf8077383c7cbd162681b6e1231d06371d553f079112edbc35dfb538",
+      "bytes": 84847192
     },
     {
       "version": "1.0.0",
