@@ -552,3 +552,20 @@ window.addEventListener('load', () => {
         img.src = src;
     });
 });
+
+// Hero rotating platform word
+(function () {
+    const words = document.querySelectorAll('.rotator .rw');
+    if (words.length < 2) return;
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let i = 0;
+    setInterval(() => {
+        if (document.hidden) return;
+        const cur = words[i];
+        cur.classList.remove('is-active');
+        cur.classList.add('is-leaving');
+        setTimeout(() => cur.classList.remove('is-leaving'), 400);
+        i = (i + 1) % words.length;
+        words[i].classList.add('is-active');
+    }, 1500);
+})();

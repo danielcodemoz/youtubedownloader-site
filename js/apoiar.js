@@ -108,14 +108,19 @@
     '.p{--bg:#fefefe;--fg:#0d0d0f;--mut:#5a5a68;--line:#e8e3e9;--card:#faf8fb;--ac:' + CFG.accent + ';--glow:rgba(225,29,72,.12);' +
     'font:14px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial,sans-serif;color:var(--fg);background:var(--bg);' +
     'border-radius:16px;box-sizing:border-box;width:100%;max-width:390px;padding:18px;position:relative;text-align:left}' +
-    '.p.dk{--bg:#0f0d15;--fg:#f5f3f7;--mut:#a8a3b0;--line:#2a2430;--card:#1a1621;--glow:rgba(225,29,72,.22)}' +
+    '.p.dk{--bg:#131316;--fg:#f4f4f5;--mut:#a1a1aa;--line:rgba(255,255,255,.08);--card:#1c1c20;--glow:rgba(225,29,72,.22);' +
+    'background:radial-gradient(120% 60% at 0% 0%,rgba(225,29,72,.12),transparent 60%),linear-gradient(180deg,#18181c,#111114);border:1px solid rgba(255,255,255,.07);box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}' +
+    '.p.dk .card,.p.dk a.b{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));border-color:rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 2px 6px rgba(0,0,0,.25)}' +
+    '.p.dk a.b:hover{border-color:rgba(244,63,94,.55);background:linear-gradient(180deg,rgba(244,63,94,.10),rgba(255,255,255,.02));box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 6px 18px rgba(225,29,72,.18)}' +
+    '.p.dk .cp{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12)}.p.dk .cp:hover{border-color:rgba(244,63,94,.6);background:rgba(244,63,94,.08)}' +
+    '.p.dk h2 svg{color:#f43f5e}.p.dk .x:hover{background:rgba(255,255,255,.08)}' +
     '.p *{box-sizing:border-box}.p:focus{outline:none}' +
     'h2{margin:0 30px 4px 0;font-size:17.5px;line-height:1.2;font-weight:750;display:flex;gap:7px;align-items:center}' +
     'h2 svg{color:var(--ac);flex:none;filter:drop-shadow(0 0 8px var(--glow))}' +
     '.sub{margin:0 0 14px;color:var(--mut);font-size:12.5px}' +
     '.card{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:12px;margin-bottom:8px;' +
     'box-shadow:0 1px 3px rgba(0,0,0,.04)}' +
-    '.p.dk .card{box-shadow:0 2px 8px rgba(0,0,0,.25);border-color:rgba(225,29,72,.08)}' +
+    
     '.mp{display:flex;gap:12px;align-items:center}' +
     '.qr{width:80px;height:80px;flex:none;border-radius:8px;background:#fff;padding:0;display:block;cursor:pointer;' +
     'transition:transform .15s,box-shadow .15s;border:2px solid transparent}' +
