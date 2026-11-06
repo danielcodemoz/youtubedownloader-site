@@ -545,12 +545,23 @@ body {
     transform-origin: 50% 110%;
 }
 
-.hero-card img {
+.hero-card img,
+.hero-card .hero-shot {
     width: 100%;
     height: auto;
     display: block;
     aspect-ratio: 1100 / 715;
     object-fit: cover;
+}
+
+/* Theme-aware hero screenshots: dark shots by default, light shots in light theme */
+.hero-card .hero-shot-light { display: none; }
+[data-theme="light"] .hero-card .hero-shot-dark { display: none; }
+[data-theme="light"] .hero-card .hero-shot-light { display: block; }
+[data-theme="light"] .hero-card {
+    background: #f4f4f5;
+    border-color: rgba(15, 15, 15, 0.08);
+    box-shadow: 0 18px 40px rgba(15, 15, 15, 0.12);
 }
 
 /* Desktop fanned deck (concept-2) — back → front */
