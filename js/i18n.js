@@ -221,6 +221,8 @@ const translations = {
         'whatsnew.info.text': "Exporte os detalhes de Informação multimédia para um ficheiro TXT.",
         'whatsnew.playlists.title': "Playlists acompanhadas",
         'whatsnew.playlists.text': "Os novos vídeos ficam na mesma pasta da playlist. Acompanhe várias playlists, com pausa, retoma e paragem, além de pausa global.",
+        'whatsnew.deeplink.title': "Links do navegador para a app",
+        'whatsnew.deeplink.text': "A extensão MediaPulse pode enviar um link pelo protocolo ytdownloader:// para a caixa de colar links da app. O download só começa após a sua confirmação.",
     },
     
     en: {
@@ -440,6 +442,8 @@ const translations = {
         'whatsnew.info.text': "Export Media Info details to a TXT file.",
         'whatsnew.playlists.title': "Watched playlists",
         'whatsnew.playlists.text': "New videos stay in the same playlist folder. Watch multiple playlists with pause, resume and stop, plus global pause.",
+        'whatsnew.deeplink.title': "Send browser links to the app",
+        'whatsnew.deeplink.text': "The MediaPulse extension can send a link via ytdownloader:// to the app’s paste box. Nothing downloads until you confirm.",
     }
 };
 

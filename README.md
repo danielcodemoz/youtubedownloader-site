@@ -93,8 +93,9 @@ Without JavaScript, or if `version.json` can't be read, the HTML still links to 
 
 The site advertises the confirmed 1.2.0 improvements in PT and EN: Downloads spacing,
 multi-site history PDF, clear-all links, card glow, Recent Jobs, Media Info TXT export,
-and watched playlists. The conditional PR #5 deep link is omitted until its inclusion
-in the app release is confirmed.
+watched playlists, and the PR #5 `ytdownloader://` deep link. The MediaPulse
+extension can send a link to the app’s paste box; nothing downloads until the
+user confirms.
 
 `version.json` declares `/download/ytDownloader_1.2.0_x64-setup.exe` as the newest
 release with `available: false` and an empty size placeholder. The site shows
