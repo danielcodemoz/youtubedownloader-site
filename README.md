@@ -35,7 +35,7 @@ youtubedownloader-site/
 │   └── style.css      # Styles with animations
 ├── version.json       # Releases list read by the download buttons
 ├── updates/
-│   └── latest.json    # Tauri updater manifest (template until 1.1.0 is signed)
+│   └── latest.json    # Live Tauri updater manifest (separate release step)
 ├── js/
 │   ├── i18n.js        # PT/EN texts
 │   ├── script.js      # Interactive features
@@ -87,22 +87,42 @@ The download buttons read **`/version.json`**. Releases are listed newest first.
 point at the newest release with `"available": true`. The "All versions" list in the download
 section shows every release, so older installers stay downloadable.
 
-Without JavaScript, or if `version.json` can't be read, the HTML still links to v1.0.0.
+Without JavaScript, or if `version.json` can't be read, the HTML still links to v1.1.0 and lists all three releases.
 
-### Publishing a new version (example: 1.1.0)
+### v1.2.0 site update / publishing
 
-1. Build the signed installer in the app repo (see its README → Release).
-2. Upload the installer:
-   `scp ytDownloader_1.1.0_x64-setup.exe <server>:/var/www/youtubedownloader/download/`
-   Keep `ytDownloader_1.0.0_x64-setup.exe` there for the "All versions" list.
-3. Edit `updates/latest.json`. Set `signature` to the **full text** of
-   `ytDownloader_1.1.0_x64-setup.exe.sig`, then check `version`, `url`, `notes` and `pub_date`.
-   Upload it to `/var/www/youtubedownloader/updates/latest.json`.
-   Apps from v1.1.0 on check this file at startup.
-4. In `version.json`, set `"available": true` on 1.1.0. That one change switches the buttons,
-   the version label, the size and the "Coming soon" badges.
+The site advertises the confirmed 1.2.0 improvements in PT and EN: Downloads spacing,
+multi-site history PDF, clear-all links, card glow, Recent Jobs, Media Info TXT export,
+watched playlists, and the PR #5 `ytdownloader://` deep link. The MediaPulse
+extension can send a link to the app’s paste box; nothing downloads until the
+user confirms.
 
-Until step 4, the site shows "Coming soon" for 1.1.0 and the buttons give v1.0.0.
+`version.json` declares `/download/ytDownloader_1.2.0_x64-setup.exe` as the newest
+release with `available: false` and an empty size placeholder. The site shows
+**1.2.0 coming soon**, while primary buttons, their version labels and sizes resolve
+to **1.1.0**. Both 1.1.0 and 1.0.0 remain listed and downloadable. No installer is
+built or uploaded by this site change.
+
+1. Daniel builds the signed `ytDownloader_1.2.0_x64-setup.exe` on Windows.
+2. Upload and verify it in Contabo `/var/www/youtubedownloader/download/`.
+   Keep the 1.1.0 and 1.0.0 installers there.
+3. Fill the actual release date/size in `version.json`, then set `available: true`
+   for 1.2.0. The primary buttons, version labels, size and status badges switch
+   automatically to 1.2.0.
+4. After the signed installer exists, Grok Bot/Daniel may separately publish the
+   update channel via `updates/latest.json`. This site PR leaves that live updater
+   manifest and the updater public key unchanged.
+5. After review/merge, Daniel syncs the site to Contabo. **There is no auto-deploy:
+   merge does not make the site live. Codex does not deploy.**
+
+Falta: upload exe + set `available: true` + optional `latest.json` publication by
+Grok Bot/Daniel + manual Contabo sync.
+
+Verify locally over HTTP in PT and EN: hero and What's new show 1.2.0, primary
+buttons resolve to 1.1.0, all versions list 1.2.0 as coming soon and offer 1.1.0 /
+1.0.0 downloads. Check mobile/desktop, footer danielpro.dev, and Apoiar (QR-only
+M-Pesa, Lemon Squeezy hidden). Installer files live on Contabo and are not in this
+repository, so a local server cannot serve the actual downloads.
 
 ### nginx: don't cache the release files
 
