@@ -1,7 +1,7 @@
 /**
  * Reads /version.json and points every download button at the newest
  * installer that is really on the server. Without JS (or if the file is
- * missing) the HTML keeps working with the v1.1.0 links already in it.
+ * missing) the HTML keeps working with the v1.2.0 links already in it.
  */
 (function () {
     'use strict';
@@ -68,5 +68,5 @@
     fetch('/version.json', { cache: 'no-store' })
         .then(function (res) { return res.ok ? res.json() : null; })
         .then(render)
-        .catch(function () { /* keep the static v1.1.0 links */ });
+        .catch(function () { /* keep the static v1.2.0 links */ });
 })();
