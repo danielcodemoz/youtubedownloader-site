@@ -1,6 +1,13 @@
 {
-  "_comment": "Releases, newest first. To publish 1.1.0: upload the installer to /download/, fill /updates/latest.json, then set \"available\": true on 1.1.0. Nothing else needs to change.",
+  "_comment": "Releases, newest first. To publish 1.2.0: upload and verify the installer in /download/, replace the size placeholder, then set \"available\": true on 1.2.0. Updating updates/latest.json is a separate Grok Bot/Daniel step after the signed installer exists; Codex does not edit it or deploy.",
   "releases": [
+    {
+      "version": "1.2.0",
+      "date": "2026-11",
+      "file": "/download/ytDownloader_1.2.0_x64-setup.exe",
+      "size": "",
+      "available": false
+    },
     {
       "version": "1.1.0",
       "date": "2026-11",
