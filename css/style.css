@@ -545,13 +545,50 @@ body {
     transform-origin: 50% 110%;
 }
 
-.hero-card img {
+.hero-card img,
+.hero-card .hero-shot {
     width: 100%;
     height: auto;
     display: block;
     aspect-ratio: 1100 / 715;
     object-fit: cover;
 }
+
+/* Theme-aware hero screenshots: dark shots by default, light shots in light theme */
+.hero-card .hero-shot-light { display: none; }
+[data-theme="light"] .hero-card .hero-shot-dark { display: none; }
+[data-theme="light"] .hero-card .hero-shot-light { display: block; }
+[data-theme="light"] .hero-card {
+    background: #f7f7f8;
+    border-color: rgba(15, 15, 15, 0.08);
+}
+
+/* Light mode: back cards stay bright — faint white veil + soft neutral shadow (no dark dim) */
+[data-theme="light"] .hero-card-settings,
+[data-theme="light"] .hero-card-tools,
+[data-theme="light"] .hero-card-downloads {
+    box-shadow: 0 12px 28px rgba(15, 15, 15, 0.07), 0 1px 4px rgba(15, 15, 15, 0.04) !important;
+    filter: none;
+    opacity: 1;
+}
+[data-theme="light"] .hero-card-settings::after,
+[data-theme="light"] .hero-card-tools::after,
+[data-theme="light"] .hero-card-downloads::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(255, 255, 255, 0.10);
+    pointer-events: none;
+    z-index: 1;
+}
+[data-theme="light"] .hero-card-home {
+    box-shadow: 0 20px 44px rgba(15, 15, 15, 0.11), 0 0 24px rgba(52, 152, 219, 0.07) !important;
+    filter: none;
+    opacity: 1;
+}
+[data-theme="light"] .hero-card-home::after { content: none; }
+[data-theme="light"] .hero-card:hover { filter: none; opacity: 1; }
 
 /* Desktop fanned deck (concept-2) — back → front */
 .hero-card-settings {
