@@ -5,6 +5,25 @@
 
 const translations = {
     pt: {
+        'safety.kicker': "Windows · Segurança",
+        'safety.title': "Antes de executar o instalador",
+        'safety.lead': "No Microsoft Edge, um aviso de transferência pouco comum indica que o ficheiro ainda não tem uma reputação estabelecida. Não é uma confirmação de que seja malicioso nem de que seja seguro. «Editor desconhecido» significa que o aviso não confirma quem publicou o ficheiro.",
+        'safety.start': "Na página oficial, confirme o domínio e clique em «Descarregar para Windows» (ou no botão do instalador Windows escolhido).",
+        'safety.source': "Só se o Edge disser que o ficheiro não é transferido com frequência: confirme o domínio oficial, o nome exacto do ficheiro e a versão esperada. A página oficial deve publicar um SHA-256 para esse ficheiro. Se não publicar, pare. Domínio oficial: youtubedownloader.danielpro.dev.",
+        'safety.save': "Nas Transferências do Edge, abra o menu ⋯ do ficheiro e escolha Manter (Keep). Em seguida, abra a seta junto de Eliminar (Delete) e escolha Manter mesmo assim (Keep anyway). Isto só guarda o ficheiro. Não clique em «Abrir ficheiro».",
+        'safety.signature': "Se houver uma assinatura digital, confirme nas Propriedades do ficheiro que é válida e que o editor é o esperado. Se a assinatura for inválida ou o editor não corresponder, não execute.",
+        'safety.hash': "Se já tiver o ficheiro guardado, abra o PowerShell na pasta onde o guardou. Copie o comando da versão certa, sem executar o instalador, e compare todo o resultado Hash com o SHA-256 publicado. A correspondência verifica a integridade, não prova que o ficheiro seja seguro.",
+        'safety.stop': "Se não puder verificar a origem ou o ficheiro, o SHA-256 for diferente ou houver um aviso de perigo, de malware ou um bloqueio por política ou pelo administrador, não prossiga nem execute. Mantenha as protecções activas.",
+        'safety.edge': "Microsoft Edge · Transferências",
+        'safety.visual': "Simulação sem som: guardar no Edge e comparar o SHA-256 antes de executar.",
+        'safety.warning': "Este ficheiro não é transferido com frequência",
+        'safety.publisher': "Editor: desconhecido",
+        'safety.check': "Pare e verifique o ficheiro",
+        'safety.video': "Guia ilustrado de verificação do instalador",
+        'safety.releases': "SHA-256 por versão",
+        'safety.manifest': "Consultar os valores publicados no manifesto de versões",
+        'safety.unavailable': "SHA-256 não publicado para esta versão.",
+
         // Meta
         'meta.title': 'ytDownloader - Descarregue Vídeos do YouTube com Facilidade',
         'meta.description': 'ytDownloader é uma aplicação Windows poderosa para descarregar vídeos do YouTube. Rápido, elegante e com funcionalidades avançadas.',
@@ -226,6 +245,25 @@ const translations = {
     },
     
     en: {
+        'safety.kicker': "Windows · Security",
+        'safety.title': "Before you run the installer",
+        'safety.lead': "In Microsoft Edge, an uncommon download warning means the file does not have an established reputation. It neither confirms the file is malicious nor establishes that it is safe. “Unknown publisher” means the warning does not confirm who published the file.",
+        'safety.start': "On the official page, confirm the domain and click “Download for Windows” (or the button for your chosen Windows installer).",
+        'safety.source': "Only if Edge says the file isn’t commonly downloaded: confirm the official domain, exact filename and expected version. The official page must publish a SHA-256 for that exact file. If it does not, stop. Official domain: youtubedownloader.danielpro.dev.",
+        'safety.save': "In Edge Downloads, open the file’s ⋯ menu and choose Keep. Next, open the arrow beside Delete and choose Keep anyway. This only saves the file. Do not click “Open file”.",
+        'safety.signature': "If a digital signature is present, check in the file’s Properties that it is valid and the publisher is the one you expect. Do not run the file if its signature is invalid or the publisher does not match.",
+        'safety.hash': "If the file is already saved, open PowerShell in the folder where you saved it. Copy the command for your version, without running the installer, and compare the full Hash result with the published SHA-256. A match verifies integrity, not that the file is safe.",
+        'safety.stop': "If you cannot verify the source or file, the SHA-256 differs, or there is an unsafe-file or malware warning or a policy or administrator block, stop and do not run the file. Keep protections enabled.",
+        'safety.edge': "Microsoft Edge · Downloads",
+        'safety.visual': "Silent simulation: saving in Edge and comparing SHA-256 before running.",
+        'safety.warning': "This file isn’t commonly downloaded",
+        'safety.publisher': "Publisher: Unknown",
+        'safety.check': "Stop and verify the file",
+        'safety.video': "Illustrated installer verification guide",
+        'safety.releases': "SHA-256 by version",
+        'safety.manifest': "See published checksums in the release manifest",
+        'safety.unavailable': "No SHA-256 has been published for this version.",
+
         // Meta
         'meta.title': 'ytDownloader - Download YouTube Videos with Ease',
         'meta.description': 'ytDownloader is a powerful Windows application for downloading YouTube videos. Fast, elegant, and packed with advanced features.',

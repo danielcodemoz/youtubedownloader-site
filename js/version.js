@@ -6,9 +6,93 @@
 (function () {
     'use strict';
 
+    function renderChecksums(releases) {
+        var list = document.getElementById('installer-checksums');
+        if (!list) return;
+        var rows = releases.filter(function (release) {
+            return release.available && typeof release.file === 'string';
+        }).map(function (release) {
+            var filename = release.file.split('/').pop();
+            if (!/^[a-zA-Z0-9_.-]+\.exe$/i.test(filename)) return null;
+            var row = document.createElement('li');
+            var label = document.createElement('strong');
+            label.textContent = filename;
+            row.appendChild(label);
+            if (/^[a-f0-9]{64}$/i.test(release.sha256 || '')) {
+                var hash = document.createElement('code');
+                hash.textContent = release.sha256;
+                var command = document.createElement('code');
+                command.textContent = "Get-FileHash -LiteralPath '.\\" + filename + "' -Algorithm SHA256";
+                row.appendChild(hash);
+                row.appendChild(command);
+            } else {
+                var unavailable = document.createElement('span');
+                unavailable.setAttribute('data-i18n', 'safety.unavailable');
+                unavailable.textContent = window.i18n ? window.i18n.t('safety.unavailable') : 'SHA-256 não publicado para esta versão.';
+                row.appendChild(unavailable);
+            }
+            return row;
+        }).filter(Boolean);
+        if (rows.length) list.replaceChildren.apply(list, rows);
+    }
+
+    function initInstallerGuide() {
+        var video = document.querySelector('.installer-safety-video');
+        var demo = document.querySelector('.installer-safety-demo');
+        if (!video || !demo) return;
+        var reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+        var visible = false;
+        var autoAllowed = true;
+        var automaticPause = false;
+        video.muted = true;
+        video.hidden = false;
+        demo.hidden = true;
+
+        function stopPlayback() {
+            if (!video.paused) {
+                automaticPause = true;
+                video.pause();
+            }
+        }
+
+        function updatePlayback() {
+            if (!visible || document.hidden) {
+                stopPlayback();
+            } else if (!reducedMotion.matches && autoAllowed && !video.ended) {
+                video.play().catch(function () { /* native controls remain available */ });
+            }
+        }
+
+        video.addEventListener('pause', function () {
+            if (!automaticPause) autoAllowed = false;
+            automaticPause = false;
+        });
+        video.addEventListener('error', function () {
+            video.hidden = true;
+            demo.hidden = false;
+        });
+        reducedMotion.addEventListener('change', function () {
+            if (reducedMotion.matches) stopPlayback();
+            else updatePlayback();
+        });
+        document.addEventListener('visibilitychange', updatePlayback);
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function (entries) {
+                visible = entries[0].isIntersecting && entries[0].intersectionRatio >= .5;
+                updatePlayback();
+            }, { threshold: [.5] }).observe(video);
+        }
+        var assetBase = '/assets/installer-guide/install-guide-en-light-v5';
+        video.poster = assetBase + '-poster.webp';
+        video.src = assetBase + '.mp4';
+        video.load();
+        updatePlayback();
+    }
+
     function render(config) {
         var releases = (config && config.releases) || [];
         if (!releases.length) return;
+        renderChecksums(releases);
         var newest = releases[0];
         var current = releases.filter(function (r) { return r.available; })[0];
         if (!current) return;
@@ -64,6 +148,8 @@
             });
         }
     }
+
+    initInstallerGuide();
 
     fetch('/version.json', { cache: 'no-store' })
         .then(function (res) { return res.ok ? res.json() : null; })

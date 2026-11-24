@@ -1912,3 +1912,158 @@ body.mobile-menu-open {
   .hero-title{padding-right:0; font-size:1.78rem}
 }
 @media (min-width: 641px) and (max-width: 900px){.hero-ctas{flex-direction:row;flex-wrap:wrap}.hero-ctas .btn{width:auto;min-width:200px}}
+
+/* Windows installer verification */
+.installer-safety {
+    padding: 3rem 0;
+}
+.installer-safety-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1.4rem, 4vw, 3.5rem);
+    padding: clamp(1rem, 4vw, 3rem);
+    background: linear-gradient(140deg, color-mix(in srgb, var(--color-primary) 9%, var(--color-surface)), var(--color-surface) 60%);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-xl);
+}
+.installer-safety-kicker {
+    color: var(--color-text-secondary);
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+.installer-safety-guide h2 {
+    margin: .25rem 0 1rem;
+    font-size: clamp(1.5rem, 3.4vw, 2.6rem);
+    line-height: 1.15;
+}
+.installer-safety-guide ol {
+    padding-inline-start: 1.25rem;
+    margin: .9rem 0;
+    color: var(--color-text-secondary);
+}
+.installer-safety-guide li + li {
+    margin-top: .5rem;
+}
+.installer-safety-stop {
+    border-inline-start: 3px solid var(--color-primary);
+    padding-inline-start: .85rem;
+    font-weight: 600;
+}
+.installer-safety-demo {
+    display: grid;
+    place-items: center;
+    min-height: 13rem;
+    padding: clamp(.65rem, 2vw, 1.7rem);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--color-border);
+    background: radial-gradient(ellipse at 28% 20%, color-mix(in srgb, var(--color-primary) 20%, var(--color-surface-light)), var(--color-surface-light) 77%);
+}
+.installer-safety-window {
+    width: 100%;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+}
+.installer-safety-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .25rem;
+    padding: .5rem .65rem;
+    border-bottom: 1px solid var(--color-border);
+    font-size: .8rem;
+    color: var(--color-text-secondary);
+}
+.installer-safety-bar i {
+    width: .45rem;
+    height: .45rem;
+    border-radius: 50%;
+    background: var(--color-primary);
+}
+.installer-safety-bar span {
+    margin-inline-start: .3rem;
+}
+.installer-safety-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: .6rem;
+    padding: .85rem .65rem;
+}
+.installer-safety-notice svg {
+    flex: 0 0 auto;
+    color: var(--color-primary);
+    transform-origin: center;
+}
+.installer-safety-notice p {
+    font-size: .9rem;
+    color: var(--color-text-secondary);
+}
+.installer-safety-check {
+    margin: 0 .65rem .75rem;
+    padding: .35rem .65rem;
+    border: 1px solid var(--color-border);
+    border-radius: .65rem;
+    font-size: .88rem;
+    font-weight: 650;
+}
+.installer-safety-video {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface-light);
+}
+.installer-safety-figure figcaption {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: .7rem;
+    color: var(--color-text-secondary);
+    font-size: .83rem;
+}
+.installer-safety-releases summary:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+.installer-safety-releases {
+    grid-column: 1 / -1;
+    min-width: 0;
+    padding: .7rem 1rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+}
+.installer-safety-releases summary {
+    cursor: pointer;
+    font-weight: 650;
+}
+.installer-safety-releases ul {
+    list-style: none;
+}
+.installer-safety-releases li {
+    display: grid;
+    gap: .3rem;
+    margin-top: .75rem;
+    padding-top: .65rem;
+    border-top: 1px solid var(--color-border);
+    overflow-wrap: anywhere;
+}
+.installer-safety-releases code {
+    font-size: .82rem;
+    color: var(--color-text-secondary);
+}
+@media (max-width: 740px) {
+    .installer-safety-card { grid-template-columns: minmax(0, 1fr); }
+}
+.installer-safety-demo[hidden],
+.installer-safety-video[hidden] {
+    display: none;
+}
+
+.installer-safety-demo img { display: block; width: 100%; height: auto; border-radius: inherit; }
