@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css?v=1.2.0-hero10">
+    <link rel="stylesheet" href="/css/style.css?v=1.2.0-safety1">
     <link rel="stylesheet" href="/css/navbar-icons.css?v=3570f947">
 </head>
 <body>
@@ -405,6 +405,41 @@
         </div>
     </section>
 
+    <section id="windows-installer-safety" class="installer-safety" aria-labelledby="installer-safety-title">
+        <div class="container">
+            <div class="installer-safety-card">
+                <div class="installer-safety-guide">
+                    <p class="installer-safety-kicker" data-i18n="safety.kicker">Windows · Segurança</p>
+                    <h2 id="installer-safety-title" data-i18n="safety.title">Antes de executar o instalador</h2>
+                    <p data-i18n="safety.lead">No Microsoft Edge, um aviso de transferência pouco comum indica que o ficheiro ainda não tem uma reputação estabelecida. Não é uma confirmação de que seja malicioso nem de que seja seguro. «Editor desconhecido» significa que o aviso não confirma quem publicou o ficheiro.</p>
+                    <ol>
+                        <li data-i18n="safety.start">Na página oficial, confirme o domínio e clique em «Descarregar para Windows» (ou no botão do instalador Windows escolhido).</li>
+                        <li data-i18n="safety.source">Só se o Edge disser que o ficheiro não é transferido com frequência: confirme o domínio oficial, o nome exacto do ficheiro e a versão esperada. A página oficial deve publicar um SHA-256 para esse ficheiro. Se não publicar, pare. Domínio oficial: youtubedownloader.danielpro.dev.</li>
+                        <li data-i18n="safety.save">Nas Transferências do Edge, abra o menu ⋯ do ficheiro e escolha Manter (Keep). Em seguida, abra a seta junto de Eliminar (Delete) e escolha Manter mesmo assim (Keep anyway). Isto só guarda o ficheiro. Não clique em «Abrir ficheiro».</li>
+                        <li data-i18n="safety.signature">Se houver uma assinatura digital, confirme nas Propriedades do ficheiro que é válida e que o editor é o esperado. Se a assinatura for inválida ou o editor não corresponder, não execute.</li>
+                        <li data-i18n="safety.hash">Se já tiver o ficheiro guardado, abra o PowerShell na pasta onde o guardou. Copie o comando da versão certa, sem executar o instalador, e compare todo o resultado Hash com o SHA-256 publicado. A correspondência verifica a integridade, não prova que o ficheiro seja seguro.</li>
+                    </ol>
+                    <p class="installer-safety-stop" data-i18n="safety.stop">Se não puder verificar a origem ou o ficheiro, o SHA-256 for diferente ou houver um aviso de perigo, de malware ou um bloqueio por política ou pelo administrador, não prossiga nem execute. Mantenha as protecções activas.</p>
+                </div>
+                <figure class="installer-safety-figure">
+                    <div class="installer-safety-demo" aria-hidden="true">
+                        <img src="/assets/installer-guide/install-guide-en-light-v5-poster.webp" width="960" height="540" loading="lazy" alt="">
+                    </div>
+                    <video class="installer-safety-video" width="960" height="540" controls loop muted playsinline preload="none" data-i18n-aria="safety.video" aria-label="Guia ilustrado de verificação do instalador" hidden></video>
+                    <figcaption>
+                        <span data-i18n="safety.visual">Simulação sem som: guardar no Edge e comparar o SHA-256 antes de executar.</span>
+                    </figcaption>
+                </figure>
+                <details class="installer-safety-releases">
+                    <summary data-i18n="safety.releases">SHA-256 por versão</summary>
+                    <ul id="installer-checksums">
+                        <li><a href="/version.json" data-i18n="safety.manifest">Consultar os valores publicados no manifesto de versões</a></li>
+                    </ul>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- Legal / Responsible Use Section -->
     <section id="legal" class="legal-section">
         <div class="container">
@@ -582,9 +617,9 @@
         </div>
     </footer>
 
-    <script src="/js/i18n.js?v=1.2.0r2"></script>
+    <script src="/js/i18n.js?v=1.2.0-safety1"></script>
     <script data-accent="#DA4453" data-variant="free" src="/js/apoiar.js?v=2.6.rollout" data-theme="default-dark" defer></script>
     <script src="/js/script.js?v=1.2.0-hero10"></script>
-    <script src="/js/version.js?v=1.2.0r2" defer></script>
+    <script src="/js/version.js?v=1.2.0-safety5" defer></script>
 </body>
 </html>
