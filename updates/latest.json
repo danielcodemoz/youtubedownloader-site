@@ -1,11 +1,11 @@
 {
-  "version": "1.2.0",
-  "notes": "PT: Deep link ytdownloader://add; pastas est\u00e1veis nas playlists acompanhadas com pausa/retoma/parar; brilho mais espesso (vermelho\u2192Instagram\u2192azul); limpar links; Trabalhos recentes; Media Info em TXT; PDF ytDownloader Videos Report; espa\u00e7amento melhorado.\nEN: ytdownloader://add deep link; stable watched-playlist folders with pause/resume/stop; thicker card glow (red\u2192Instagram\u2192blue); clear-all links; Recent Jobs; Media Info TXT export; ytDownloader Videos Report PDF; tidier spacing.",
-  "pub_date": "2026-11-06T11:10:00Z",
+  "version": "1.2.1",
+  "notes": "PT: Corrige a atualiza\u00e7\u00e3o do yt-dlp: a app passa a usar o yt-dlp que a atualiza\u00e7\u00e3o instala (antes continuava com a c\u00f3pia antiga e o YouTube falhava). yt-dlp inclu\u00eddo: 2026.11.23.\nEN: Fixes the yt-dlp update: downloads now use the yt-dlp the updater installs (previously the old copy kept running and YouTube failed). Bundled yt-dlp: 2026.11.23.",
+  "pub_date": "2026-11-25T10:05:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSZHVHR0xBZjVnRkhiaUYvWG16dnJrd1ZVcXJDVUJpMTU2bXNMTGNjNGVMNzJDU1gwbDNSOXd3M3RxNW5iTUhMQUdBUktYb05Kd1NaQlpsaUZNRzAzOVpNVmxlRUhmU3d3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzOTYyODM1CWZpbGU6eXREb3dubG9hZGVyXzEuMi4wX3g2NC1zZXR1cC5leGUKWnMxbVFMRW5tWjBaRGJsaTFlNEZZMEQvR3cxemltVVFyMSttUVBoQndGelRacDJaMzV6VEM2N1kxSVYvODdkQ1pYelRTenNvN2hzWENwaHRiQ3RYRFE9PQo=",
-      "url": "https://youtubedownloader.danielpro.dev/download/ytDownloader_1.2.0_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSZHVHR0xBZjVnRkluQkk1d0k2UUFwVnBBZnp6ZWlISDh4ODZscUFyUTJMaXcwOXJBK2dKSnRkMmZXUU4zVTZTL1dBM0R2QXhic0JwMEh3SjRRMXVTVjkxNUQrdXVON0FvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NjAwNzQ2CWZpbGU6eXREb3dubG9hZGVyXzEuMi4xX3g2NC1zZXR1cC5leGUKMFc1R2JYZ1NReFhqMjJ3Ujl5ZGhTR01FdDFrVGgvY2Y4MnRxbWlFQm0rbGI1OUxyMVYwOUdDY2luUmdZeVhtTTJHeE1SRTFZMTZQN2l2Nyt2WWtzQUE9PQo=",
+      "url": "https://youtubedownloader.danielpro.dev/download/ytDownloader_1.2.1_x64-setup.exe"
     }
   }
 }
