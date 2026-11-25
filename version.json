@@ -2,6 +2,15 @@
   "_comment": "Releases, newest first. Primary CTAs use the newest available release. Keep older installers listed and downloadable. updates/latest.json is the live updater manifest.",
   "releases": [
     {
+      "version": "1.2.1",
+      "date": "2026-11-25",
+      "file": "/download/ytDownloader_1.2.1_x64-setup.exe",
+      "size": "81MB",
+      "available": true,
+      "sha256": "59456373df28c1fa694e06e8e8122ecfb40343f48a6dd2821faf0099e096af85",
+      "bytes": 84952326
+    },
+    {
       "version": "1.2.0",
       "date": "2026-11-06",
       "file": "/download/ytDownloader_1.2.0_x64-setup.exe",
